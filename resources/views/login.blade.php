@@ -22,7 +22,7 @@
             @CSRF
             <div class="form-group form-anim">
 
-                <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+                <input type="text" class="form-control" name="username" id="username" placeholder="Username" autocomplete="on">
                 <div class="bar"></div>
                 <div class="form-inline">
                     <input type="password" class="form-control" name="password" id="password" placeholder="Password" style="width:90%;">
@@ -33,7 +33,7 @@
                 <div class="bar" style="width:90%;"></div>
                 <input type="checkbox" name="rememberme" id="rememberme">
                 <label for="rememberme">Remember Me</label>
-                <button type="submit" name="" class="btn mt-3 btn-block btn-grad" style="color:white;font-weight:bold;">Login</button>
+                <button type="submit" name="" class="hoverable-element btn mt-3 btn-block btn-grad active-element" style="color:white;font-weight:bold;">Login</button>
             </div>
         </form>
         <div class="text-center">
@@ -41,5 +41,68 @@
         </div>
     </div>
     </div>
+
+    <script>
+        function changeCursor(condition) {
+          const body = document.body;
+      
+          if (condition === 'hover') {
+            body.style.cursor = 'url("storage/image/cursor_2.png") 13 13, auto';
+          } else if (condition === 'click') {
+            body.style.cursor = 'url("storage/image/cursor_3.png") 13 13, auto';
+          } else {
+            body.style.cursor = 'none';
+          }
+        }
+      </script>
 </body>
 </html>
+{{-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Cursor Example</title>
+  <style>
+    /* Optional: Add styles for better visibility */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      cursor: none; /* Set the default cursor to none */
+    }
+
+    .hoverable-element {
+      width: 200px;
+      height: 100px;
+      background-color: #f0f0f0;
+      margin: 50px;
+      padding: 10px;
+    }
+
+    .clicked-element {
+      background-color: lightblue;
+    }
+  </style>
+</head>
+<body>
+
+<div class="hoverable-element" onmouseover="changeCursor('hover')" onmouseout="changeCursor('default')" onclick="changeCursor('click')">
+  Hover or Click Me
+</div>
+
+<script>
+  function changeCursor(condition) {
+    const body = document.body;
+
+    if (condition === 'hover') {
+      body.style.cursor = 'url("storage/image/cursor_2.png") 10 10, auto';
+    } else if (condition === 'click') {
+      body.style.cursor = 'url("storage/image/cursor_3.png") 10 10, auto';
+    } else {
+      body.style.cursor = 'none';
+    }
+  }
+</script>
+
+</body>
+</html> --}}

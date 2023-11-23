@@ -3,38 +3,58 @@
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
+    /* cursor: url('../storage/image/cursor_1.png') 13 13, auto; */
 }
 
-body {
-    background-color: #C6D1C0;
-    background-image: url('../storage/image/bg.png');
+
+html, body {
+    background-color: rgb(71, 48, 22);
+    background-image: url("../storage/image/Library_Entrance.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
 
+@font-face { font-family: NanumM; src: url('NanumMyeongjo.ttf'); } 
+
 .container {
-    background-color: #EAEAEA;
+    background-color: rgb(31, 31, 31);
+    border: 5px solid;
+    outline-style: solid;
+    outline-color: rgb(255, 217, 0);
     margin: auto;
-    margin-top: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding-top: 15px;
     width: 546px;
     height: 500px;
 }
 
-.container h1 {
-    color: black;
-    margin-top: 10px;
-    font-size: 56px;
-    text-shadow: 1px 1px 5px black;
+button {
+  cursor: url('../storage/image/cursor_2.png') 13 13, auto;
 }
 
-.container h1,h3 {
+.active-element:active {
+  cursor: url('../storage/image/cursor_3.png') 13 13, auto;
+}
+
+.container h1 {
+    font-family: NanumM;
+    color: rgb(255, 217, 0);
+    margin-top: 10px;
+    font-size: 56px;
+    text-shadow: 1px 1px 5px rgb(255, 217, 0);
+}
+
+.container h1,
+h3 {
     text-align: center;
 }
 
 .container h3 {
-    color: rgba(90,90,90, 71);
+    color: rgba(90, 90, 90, 71);
     font-size: 20px;
 }
 
@@ -43,56 +63,61 @@ body {
 }
 
 .btn-grad {
-    background-image: linear-gradient(to right, #B1FFA5 0%, #99EC58  51%, #B1FFA5  100%);
+    background-image: linear-gradient(
+        to right,
+        #c4a40c 0%,
+        #ffd900 51%,
+        #c4a40c 100%
+    );
     padding: 15px 45px;
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
     background-size: 200% auto;
-    color: white;            
-    box-shadow: 0 0 20px #eee;
+    color: white;
+    box-shadow: 0 0 20px black;
     border-radius: 5px;
     display: block;
-  }
+}
 
-  .btn-grad:hover {
+.btn-grad:hover {
     background-position: right center; /* change the direction of the change here */
     color: #fff;
     text-decoration: none;
-  }
- 
-  .bar {
-    background-color:rgb(203, 255, 137);
+}
+
+.bar {
+    background-color: rgb(255, 217, 0);
     width: 100%;
-    height:5px;
+    height: 5px;
     animation: bar 2.5s linear;
     animation-iteration-count: infinite;
-  }
+}
 
-
-  @keyframes bar{
-    80%{
-        background-color: rgb(177, 255, 165);
+@keyframes bar {
+    80% {
+        background-color: rgb(250, 219, 0);
     }
 
-    50%{
-        background-color: rgb(153, 236, 88);
+    50% {
+        background-color: rgb(240, 230, 140);
     }
 
-    20%{
-        background-color: rgb(177, 255, 165);
+    20% {
+        background-color: rgb(250, 219, 0);
     }
 
-    100%,0%{
-        background-color: rgb(72, 230, 48);
+    100%,
+    0% {
+        background-color: rgb(255, 217, 0);
     }
-  }
+}
 
-  .form-group input {
+.form-group input {
     margin-top: 1.5rem;
-  }
+}
 
-  .form-control {
+.form-control {
     display: block;
     width: 100%;
     height: calc(2.25rem + 2px);
@@ -100,19 +125,19 @@ body {
     font-size: 1rem;
     line-height: 1.5;
     color: #464646;
-    background-color: #E4E4E4;
+    background-color: #0f0e0e;
     background-clip: padding-box;
     border: 0px;
     border-radius: 0rem;
-  }
+}
 
-  .form-inline {
+.form-inline {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-  }
+}
 
-  /* .form-control {
+/* .form-control {
     width: 100%;
     color: #495057;
     background-color: #fff;
@@ -120,14 +145,14 @@ body {
     border-radius: 0.25rem;
   } */
 
-  .eye-icon {
+.eye-icon {
     cursor: pointer;
     position: relative;
     top: 13.33333333333333333333333333px;
     left: 8px;
     padding: 2px;
-  }
+}
 
-  .form-anim {
-    animation: intro 
-  }
+.form-anim {
+    animation: intro;
+}
