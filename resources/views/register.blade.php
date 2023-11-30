@@ -22,11 +22,11 @@
             <div class="form-group">
                 <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                 <div class="bar"></div>
-                <input type="text" class="form-control" name="NamaLengkap" id="NamaLengkap" placeholder="Nama Lengkap">
+                <input type="text" class="form-control" name="namaLengkap" id="namaLengkap" placeholder="Nama Lengkap">
                 <div class="bar"></div>
                 <input type="text" class="form-control" name="email" id="email" placeholder="E-Mail">
                 <div class="bar"></div>
-                <input type="text" class="form-control" name="Alamat" id="Alamat" placeholder="Alamat">
+                <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Alamat">
                 <div class="bar"></div>
                 <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                 <div class="bar"></div>

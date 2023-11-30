@@ -5,3 +5,25 @@
     box-sizing: border-box;
 }
 
+h2 {
+    color : rgb(255, 217, 0) !important;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.blur {
+    padding: 5px;
+    width: 50%;
+    height: 55px;
+    background-clip: text;
+    background-color: black;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}

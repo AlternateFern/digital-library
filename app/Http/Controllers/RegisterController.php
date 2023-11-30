@@ -18,10 +18,10 @@ class RegisterController extends Controller
     {
             DB::table('user')->insert([
                 'username' => $request->username,
-                'password' => Hash::make($request->password),
                 'email' => $request->email,
-                'NamaLengkap' => $request->NamaLengkap,
-                'Alamat' => $request->Alamat,
+                'namaLengkap' => $request->namaLengkap,
+                'alamat' => $request->alamat,
+                'password' => bcrypt($request->password),
                 'role' => 'peminjam'
             ]);
 

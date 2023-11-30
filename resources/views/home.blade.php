@@ -10,10 +10,64 @@
     <script src="{{ asset('js/refresh.js') }}"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <style>
+        html, body {
+            background-color: rgb(71, 48, 22);
+            background-image: url("storage/image/Floor_Of_Philosophy.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
          @include('layouts.navbar')
-         <div class="container mt-3">
-          <h2 style="text-shadow: 0px 1px 1.8px black; text-align:center; position: fixed;top: 30%;left: 50%;transform: translate(-50%, -50%);"> Selamat Datang di Perpustakaan Digital <br>E-Lumina</h2>
+         <div class="container mt-3" style="position: fixed;top: 30%;left: 50%;transform: translate(-50%, -50%);">
+          <h2 id="typing-text" style="text-shadow: 0px 1px 1.8px rgb(255, 217, 0); text-align:center;"></h2>
+         </div>
+         <div class="blur"></div>
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const words = ['Selamat Datang di E-Lumina', 'Welcome to E-Lumina']; 
+                const typingElement = document.getElementById('typing-text');
+                let currentWordIndex = 0;
+
+                function typeNextWord() {
+                    const currentWord = words[currentWordIndex];
+                    let currentIndex = 0;
+                    const interval = setInterval(function () {
+                        if (currentIndex < currentWord.length) {
+                            typingElement.textContent = currentWord.substring(0, currentIndex + 1);
+                            currentIndex++;
+                        } else {
+                            clearInterval(interval);
+                            setTimeout(typeSpace, 500); // Wait time before erasing word
+                        }
+                    }, 20); // Typing speed 
+                }
+                function typeSpace() {
+                    typingElement.textContent += ' ';
+                    setTimeout(eraseCurrentWord, 500); // Wait for half a second before erasing
+                }
+
+                function eraseCurrentWord() {
+                    let currentIndex = words[currentWordIndex].length;
+                    const interval = setInterval(function () {
+                        if (currentIndex >= 0) {
+                            typingElement.textContent = words[currentWordIndex].substring(0, currentIndex);
+                            currentIndex--;
+                        } else {
+                            clearInterval(interval);
+                            currentWordIndex = (currentWordIndex + 1) % words.length;
+                            setTimeout(typeNextWord, 500); // Wait for half a second before typing the next word
+                        }
+                    }, 25); // Erasing speed
+                }
+
+                // Start
+                typeNextWord();
+            });
+          </script>
 </body>
 </html>
