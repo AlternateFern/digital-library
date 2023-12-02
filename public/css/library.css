@@ -14,7 +14,6 @@ h2 {
 
 .blur {
     padding: 5px;
-    width: 50%;
     height: 55px;
     background-clip: text;
     background-color: black;
@@ -22,8 +21,8 @@ h2 {
     -webkit-text-fill-color: transparent;
     backdrop-filter: blur(10px);
     position: fixed;
-    top: 32%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
 }
+

@@ -18,6 +18,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
+            
         }
     </style>
 </head>
@@ -26,7 +27,11 @@
          <div class="container mt-3" style="position: fixed;top: 30%;left: 50%;transform: translate(-50%, -50%);">
           <h2 id="typing-text" style="text-shadow: 0px 1px 1.8px rgb(255, 217, 0); text-align:center;"></h2>
          </div>
-         <div class="blur"></div>
+         <div class="container mt-3" style="position: fixed;top: 40%;left: 50%;transform: translate(-50%, -50%);">
+         <a class="btn btn-sm btn-warning" href="{{url('library')}}" style="text-align:center;">Lihat List Buku</a>
+         </div>
+         <div class="blur" style="width: 50%; top: 32%;"></div>
+         
           <script>
             document.addEventListener('DOMContentLoaded', function () {
                 const words = ['Selamat Datang di E-Lumina', 'Welcome to E-Lumina']; 
@@ -42,13 +47,9 @@
                             currentIndex++;
                         } else {
                             clearInterval(interval);
-                            setTimeout(typeSpace, 500); // Wait time before erasing word
+                            setTimeout(eraseCurrentWord, 2000); // Wait time before erasing word
                         }
                     }, 20); // Typing speed 
-                }
-                function typeSpace() {
-                    typingElement.textContent += ' ';
-                    setTimeout(eraseCurrentWord, 500); // Wait for half a second before erasing
                 }
 
                 function eraseCurrentWord() {

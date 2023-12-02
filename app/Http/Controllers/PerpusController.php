@@ -14,4 +14,9 @@ class PerpusController extends Controller
         // return view('/home', ["pengaduan" => $pengaduan]);
         return view('/home');
     }
+
+    function viewLibrary()
+    {
+        return view('/library');
+    }
 }

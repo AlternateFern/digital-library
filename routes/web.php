@@ -22,3 +22,4 @@ Route::get('/login', [LoginController::class, 'viewLogin'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/home', [PerpusController::class, 'viewHome']);
+Route::get('/library', [PerpusController::class, 'viewLibrary']);
