@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Buku;
 
 class PerpusController extends Controller
 {
@@ -17,6 +18,7 @@ class PerpusController extends Controller
 
     function viewLibrary()
     {
-        return view('/library');
+        $buku = Buku::All();
+        return view('/library', compact('buku'));
     }
 }
