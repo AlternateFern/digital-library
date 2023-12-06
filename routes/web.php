@@ -20,6 +20,9 @@ Route::get('/register', [RegisterController::class, 'viewRegister']);
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
 Route::get('/login', [LoginController::class, 'viewLogin'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
+Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::get('/home', [PerpusController::class, 'viewHome']);
-Route::get('/library', [PerpusController::class, 'viewLibrary']);
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', [PerpusController::class, 'viewHome']);
+    Route::get('/library', [PerpusController::class, 'viewLibrary']);
+});

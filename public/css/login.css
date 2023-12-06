@@ -15,7 +15,7 @@ html, body {
     background-size: cover;
 }
 
-@font-face { font-family: NanumM; src: url('NanumMyeongjo.ttf'); } 
+@font-face { font-family: NanumM; src: url('../storage/font/NanumMyeongjo.ttf'); } 
 
 .container {
     background-color: rgb(31, 31, 31);
@@ -30,14 +30,6 @@ html, body {
     padding-top: 15px;
     width: 546px;
     height: 500px;
-}
-
-button {
-  cursor: url('../storage/image/cursor_2.png') 13 13, auto;
-}
-
-.active-element:active {
-  cursor: url('../storage/image/cursor_3.png') 13 13, auto;
 }
 
 .container h1 {

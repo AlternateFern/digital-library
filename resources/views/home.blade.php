@@ -24,6 +24,7 @@
 </head>
 <body>
          @include('layouts.navbar')
+         <p>{{ auth()->user()->username }}</p>
          <div class="container mt-3" style="position: fixed;top: 30%;left: 50%;transform: translate(-50%, -50%);">
           <h2 id="typing-text" style="text-shadow: 0px 1px 1.8px rgb(255, 217, 0); text-align:center;"></h2>
          </div>

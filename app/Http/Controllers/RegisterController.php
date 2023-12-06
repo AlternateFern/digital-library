@@ -16,7 +16,7 @@ class RegisterController extends Controller
 
     function register(Request $request)
     {
-            DB::table('user')->insert([
+            DB::table('users')->insert([
                 'username' => $request->username,
                 'email' => $request->email,
                 'namaLengkap' => $request->namaLengkap,
