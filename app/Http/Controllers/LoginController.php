@@ -13,7 +13,7 @@ class LoginController extends Controller
     }
 
     function login(Request $request)
-    {
+    {   
         $dataLogin = $request->only("username", "password");
         // dd($dataLogin);
         if (Auth::attempt($dataLogin)) {

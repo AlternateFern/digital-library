@@ -14,7 +14,7 @@
     <style>
         html, body {
             background-color: rgb(71, 48, 22);
-            background-image: url("storage/image/Floor_Of_Philosophy.png");
+            background-image: url("storage/image/The_Library.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;

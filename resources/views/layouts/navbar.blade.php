@@ -1,4 +1,4 @@
-<ul class="navbar nav nav-underline" style="background-color: rgb(249,206,46);">
+<ul class="navbar nav nav-underline" style="background-color: rgba(57, 33, 19, 0.6);">
     <div class="container-fluid">
       <li class="nav-item">
         <a class="navbar-brand" href="{{ url('home') }}" style="font-size:30px; font-weight:bold; color:white;"">DL</a>
