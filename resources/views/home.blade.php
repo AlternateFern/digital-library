@@ -26,16 +26,16 @@
          @include('layouts.navbar')
          <p>{{ auth()->user()->username }}</p>
          <div class="container mt-3" style="position: fixed;top: 30%;left: 50%;transform: translate(-50%, -50%);">
-          <h2 id="typing-text" style="-webkit-text-stroke: 1px rgb(134, 101, 40); text-shadow: 0px 1px 1.8px rgb(179, 112, 57); text-align:center;"></h2>
+          <h2 id="typing-text" style="-webkit-text-stroke: 1px rgb(255, 217, 0); text-shadow: 0px 1px 1.8px rgb(255, 217, 0); text-align:center;"></h2>
          </div>
          <div class="container mt-3" style="position: fixed;top: 40%;left: 50%;transform: translate(-50%, -50%);">
          <a class="btn btn-sm btn-warning" href="{{url('library')}}" style="text-align:center;">Lihat List Buku</a>
          </div>
-         <div class="blur" style="width: 35%; top: 32%;"></div>
+         <div class="blur" style="width: 40%; top: 32%;"></div>
          
           <script>
             document.addEventListener('DOMContentLoaded', function () {
-                const words = ['Selamat Datang di E-Lumina', 'Welcome to E-Lumina']; 
+                const words = ['Selamat Datang di Perpus Online', 'Welcome to The Library']; 
                 const typingElement = document.getElementById('typing-text');
                 let currentWordIndex = 0;
 
