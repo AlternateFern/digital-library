@@ -1,0 +1,25 @@
+nav {
+    background-color: rgb(22, 11, 1);
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+    border-bottom: 1.5px solid rgba(255, 200, 98, 1);
+}
+
+nav>a{
+    text-decoration: none;
+    color: rgb(255, 200, 98);
+    padding: 8px 14px;
+    vertical-align: middle;
+}
+
+nav>a:hover {
+    background-color: rgb(255, 200, 98);
+    color: black;
+}
+
+#logout {
+    margin-left: auto;
+    padding-top: 8px;
+    border-left: 1.5px solid rgba(255, 200, 98, 1);
+}
