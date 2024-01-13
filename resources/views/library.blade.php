@@ -14,10 +14,6 @@
     <style>
         html, body {
             background-color: rgb(71, 48, 22);
-            background-image: url("storage/image/The_Library.jpg");
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
         }
 
         td {
@@ -30,13 +26,8 @@
          <div class="container mt-3">
           <h2 style="text-shadow: 0px 1px 1.8px rgb(255, 217, 0); text-align:center;">Data Buku</h2>
          </div>
-         <div class="container mt-3" style="position: fixed;top: 30%;left: 50%;transform: translate(-50%, -50%);">
-         <a href="{{url('library')}}" style="text-align:center;">Lihat...</a>
-         </div>
-
-
          <div class="container mt-3">
-         <table class="table" style="margin-top:20px;">
+         {{-- <table class="table" style="margin-top:20px;">
             <tbody>
               @foreach ($buku as $buku)
                 <tr>
@@ -49,15 +40,14 @@
                   <td>{{  $buku->Penulis }}</td>
                   <td>{{  $buku->Penerbit }}</td>
                   <td>{{  $buku->TahunTerbit }}</td>
-                    {{-- <td>
-                      <a href="detail_pengaduan/{{$pengaduan->id_pengaduan}}"><button type="button" class="btn btn-warning">Detail & Respon</button></a>
-                      <a href="hapus_pengaduan/{{$pengaduan->id_pengaduan}}"><button type="button" class="btn btn-outline-danger">Hapus</button></a> 
-                    </td>  --}}
                 </tr>
               @endforeach
-              {{-- <a href="#">
+            </tbody> 
+            </table> --}}
+              <a href="#">
                 <img width="100" height="150" src="storage/image/Don-Quixote-COVER.jpg">
-              </a> --}}
+              </a>
             </div>
+         <a href="{{url('library')}}" style="text-align:center;">Lihat...</a>
 </body>
 </html>

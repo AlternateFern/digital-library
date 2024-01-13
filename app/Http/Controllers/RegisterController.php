@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -21,7 +20,7 @@ class RegisterController extends Controller
                 'email' => $request->email,
                 'namaLengkap' => $request->namaLengkap,
                 'alamat' => $request->alamat,
-                'password' => bcrypt($request->password),
+                'password' => Hash::make($request->password),
                 'role' => 'peminjam'
             ]);
 

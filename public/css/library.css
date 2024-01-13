@@ -7,13 +7,27 @@
 
 
 h2 {
-    color : rgb(255, 217, 0) !important;
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
-.blur {
+.home-header {
+    display: block;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../storage/image/The_Library.jpg");
+    min-height: 75%;
+    height: 75%;
+}
+
+.h2-background-shape {
+    margin: auto;
     width: 50%;
-    backdrop-filter: blur(9px);
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(37, 22, 4);
+    transform: skew(20deg);
+    transform-origin: 0;
 }
