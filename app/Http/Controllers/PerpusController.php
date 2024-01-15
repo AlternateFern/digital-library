@@ -21,4 +21,10 @@ class PerpusController extends Controller
         $buku = Buku::All();
         return view('/library', compact('buku'));
     }
+
+    function bookDetails($id){
+        $buku = Buku::where('BukuID', $id)->get();
+        return view('/bookdetails', ['buku' => $buku]);
+    }
+
 }

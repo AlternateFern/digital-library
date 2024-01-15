@@ -1,14 +1,15 @@
 * {
     margin: 0;
     padding: 0;
-    text-decoration: none;
+    text-decoration: none !important;
     box-sizing: border-box;
 }
 
 
-h2 {
+div>h2 {
     background-clip: text;
     -webkit-background-clip: text;
+    color: rgb(255, 196, 0);
 }
 
 .home-header {
@@ -22,6 +23,7 @@ h2 {
 }
 
 .h2-background-shape {
+    color: rgb(255, 196, 0);
     margin: auto;
     width: 50%;
     height: 100%;

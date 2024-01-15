@@ -31,12 +31,20 @@
         <header class="home-header" style="max-width:1500px; min-height:300px;">
         <div class="container mt-3 bg" style="position: fixed;top: 30%;left: 50%;transform: translate(-50%, -50%);">
             <div class="h2-background-shape">
-                <h2 style="color: rgb(255, 196, 0); text-align:center; transform: skew(-20deg);">Selamat Datang!</h2>
+                <h2 style="text-align:center; transform: skew(-20deg);">Selamat Datang!</h2>
             </div>
          </div>
             </header>
-         <div class="container mt-3">
+         <div class="container mt-5">
          <h2>Trending Books</h2>
+         <div class="container mt-3">
+         <a href="library/1" style="margin-right:20px;">
+            <img width="100" height="150" src="storage/image/Don-Quixote-COVER.jpg">
+          </a>
+          <a href="library/2" style="margin-right:20px;">
+            <img width="100" height="150" src="storage/image/To_Kill_a_Mockingbird_(first_edition_cover).jpg">
+          </a>
+         </div>
          </div>
          
 </body>

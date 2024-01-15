@@ -25,4 +25,5 @@ Route::get('/logout', [LoginController::class, 'logout']);
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [PerpusController::class, 'viewHome']);
     Route::get('/library', [PerpusController::class, 'viewLibrary']);
+    Route::get('/library/{id}', [PerpusController::class, 'bookDetails']);
 });
