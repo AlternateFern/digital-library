@@ -13,7 +13,7 @@
 
     <style>
         html, body {
-            background-color: rgb(71, 48, 22);
+            background-color: rgb(37, 22, 4);
         }
 
         td {
@@ -44,10 +44,11 @@
               @endforeach
             </tbody> 
             </table> --}}
+
               <a href="#">
                 <img width="100" height="150" src="storage/image/Don-Quixote-COVER.jpg">
-              </a>
+              </a> <br><br>
+              <a href="{{url('add_book')}}"><button type="button" class="btn btn-outline-warning">Tambah buku</button></a>
             </div>
-         <a href="{{url('library')}}" style="text-align:center;">Lihat...</a>
 </body>
 </html>

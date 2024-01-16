@@ -15,8 +15,6 @@
         html, body {
             background-color: rgb(37, 22, 4);
         }
-
-        
     </style>
 </head>
 <body>

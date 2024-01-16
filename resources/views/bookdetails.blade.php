@@ -22,12 +22,15 @@
 <body>
         @include('layouts.navbar')
         @foreach ($buku as $buku)
-         <div class="container mt-5">
-         <h2>{{ $buku->Judul }}</h2>
-         <h2>{{ $buku->Penulis }}</h2>
-         <h2>{{ $buku->Penerbit }}</h2>
-         <h2>{{ $buku->TahunTerbit }}</h2>
-         </div>
+        <div class="container mt-5 d-inline-flex">
+            <img src="../storage/image/{{ $buku->Sampul }}" width="200" height="300">
+            <div class="d-column mx-4">
+                <h2>{{ $buku->Judul }}</h2>
+                <h2>{{ $buku->Penulis }}</h2>
+                <h2>{{ $buku->Penerbit }}</h2>
+                <h2>{{ $buku->TahunTerbit }}</h2>
+            </div>
+        </div>
          @endforeach
 </body>
 </html>

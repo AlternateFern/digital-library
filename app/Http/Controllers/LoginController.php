@@ -26,7 +26,28 @@ class LoginController extends Controller
     function logout()
     {
         Auth::logout();
+        return redirect('/login');
+    }
 
+    function viewLoginAdmin()
+    {
+        return view('admin/admin_login');
+    }
+
+    function loginAdmin(Request $request)
+    {   
+        $dataLogin = $request->only("username", "password");
+        // dd($dataLogin);
+        if (Auth::attempt($dataLogin)) {
+            return redirect('/home');
+        } else {
+            return redirect()->back()->with("error", "Username atau Password Salah");
+        }
+    }
+
+    function logoutAdmin()
+    {
+        Auth::logout();
         return redirect('/login');
     }
 }

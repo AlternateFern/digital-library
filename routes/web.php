@@ -18,9 +18,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/register', [RegisterController::class, 'viewRegister']);
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
+Route::get('admin/register', [RegisterController::class, 'viewRegisterAdmin']);
+Route::post('admin/register', [RegisterController::class, 'registerAdmin'])->name('admin/register');
+
 Route::get('/login', [LoginController::class, 'viewLogin'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout']);
+Route::get('admin/login', [LoginController::class, 'viewLoginAdmin'])->name('admin/login');
+Route::post('admin/login', [LoginController::class, 'loginAdmin']);
+Route::get('admin/logout', [LoginController::class, 'logoutAdmin']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [PerpusController::class, 'viewHome']);

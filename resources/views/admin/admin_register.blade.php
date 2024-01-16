@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register | Perpustakaan Digital / Digital Library</title>
+    <title>Register (Admin) | Perpustakaan Digital / Digital Library</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/register.css') }}">
 </head>
@@ -12,11 +12,11 @@
 <body>
     <div class="container">
         <h1>Register</h1>
-        <h3>Selamat datang!</h3>
+        <h3>Selamat datang Admin Baru!</h3>
         @if(session("error"))
         <h5 class="alert alert-danger text-center">{{session("error")}}</h5>
         @endif
-        <form class="px-3" action="{{ route('register') }}" method="POST">
+        <form class="px-3" action="{{ route('admin/register') }}" method="POST">
             @method("POST")
             @csrf
             <div class="form-group">
@@ -36,8 +36,7 @@
             </div>
         </form>
         <div class="text-center">
-            <a href="{{url('login')}}">Sudah Memiliki Akun?</a>
-            <a href="{{url('admin_register')}}"
+            <a href="{{url('admin/login')}}">Sudah Memiliki Akun?</a>
         </div>
     </div>
     </div>

@@ -27,5 +27,25 @@ class RegisterController extends Controller
             return redirect('/login')->with('success', 'Registration successful!');
             // return redirect('/register')->with('error', 'Registration Failed.');
         }
+
+        function viewRegisterAdmin()
+    {
+        return view('admin/admin_register');
+    }
+
+    function registerAdmin(Request $request)
+    {
+            DB::table('users')->insert([
+                'username' => $request->username,
+                'email' => $request->email,
+                'namaLengkap' => $request->namaLengkap,
+                'alamat' => $request->alamat,
+                'password' => Hash::make($request->password),
+                'role' => 'admin'
+            ]);
+
+            return redirect('admin/login')->with('success', 'Registration successful!');
+            // return redirect('/register')->with('error', 'Registration Failed.');
+        }
     }
 
