@@ -30,7 +30,9 @@
                 <h2>{{ $buku->Penerbit }}</h2>
                 <h2>{{ $buku->TahunTerbit }}</h2>
             </div>
+            @endforeach
+            <a href="{{url('library')}}"><button type="button" class="btn btn-outline-warning">Kembali</button></a>
         </div>
-         @endforeach
+         
 </body>
 </html>

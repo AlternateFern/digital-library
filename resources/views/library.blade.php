@@ -45,7 +45,7 @@
             </tbody> 
             </table> --}}
 
-              <a href="#">
+              <a href="library/1">
                 <img width="100" height="150" src="storage/image/Don-Quixote-COVER.jpg">
               </a> <br><br>
               <a href="{{url('add_book')}}"><button type="button" class="btn btn-outline-warning">Tambah buku</button></a>
