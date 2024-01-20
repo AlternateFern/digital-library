@@ -19,6 +19,10 @@
         td {
           vertical-align: middle;
         }
+
+        .form-control {
+          width: 40%;
+        }
     </style>
 </head>
 <body>
@@ -27,19 +31,39 @@
           <h2 style="text-shadow: 0px 1px 1.8px rgb(255, 217, 0);">Tambah Buku</h2>
          </div>
          <div class="container mt-3">
-                <form action="{{url('add_book')}}">
+                <form action="add_book" method="POST" enctype="multipart/form-data">
+                  @method("POST")
+                  @csrf
+
                     <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Judul Buku</label>
+                        <label for="Judul" class="form-label">Judul Buku</label>
                         <input type="text" class="form-control" name="Judul" id="Judul" placeholder="Judul buku">
-                        <label for="exampleFormControlTextarea1" class="form-label">Penulis Buku</label>
+                        @error('Judul')
+                          <div class="alert alert-danger">Kolom Judul Buku harus di isi minimal 2 huruf.</div>
+                        @enderror
+                        <label for="Penulis" class="form-label">Penulis Buku</label>
                         <input type="text" class="form-control" name="Penulis" id="Penulis" placeholder="Penulis buku">
-                      </div>
-                      <label for="exampleFormControlTextarea1" class="form-label">Sampul Buku</label>
-                      <div class="input-group mb-3">
-                        <input type="file" class="form-control" id="inputGroupFile02" name="foto">
-                      </div>
-                      <button type="submit" class="btn btn-success ml-auto">Tambah</button>
-                      <a href="{{ url('home') }}" class="btn btn-warning ml-auto" style="margin-left: 7px;">Kembali</a>
+                        @error('Judul')
+                          <div class="alert alert-danger">Kolom Penulis Buku harus di isi minimal 3 huruf.</div>
+                        @enderror
+                        <label for="Penerbit" class="form-label">Penerbit Buku</label>
+                        <input type="text" class="form-control" name="Penerbit" id="Penerbit" placeholder="Penerbit buku">
+                        @error('Judul')
+                          <div class="alert alert-danger">Kolom Penerbit Buku harus di isi minimal 4 huruf.</div>
+                        @enderror
+                        <label for="TahunTerbit">Tahun Terbit</label>
+                        <input type="number" class="form-control" id="TahunTerbit" name="TahunTerbit" min="1100" max="2025" style="width: 13%;" placeholder="1100-2025">
+                        @error('Judul')
+                          <div class="alert alert-danger">Kolom Tahun Terbit harus di isi minimal dari tahun 1100 sampai dengan 2025.</div>
+                        @enderror
+                      <label for="Sampul" class="form-label">Sampul Buku</label>
+                      <input type="file" class="form-control" id="Sampul" name="Sampul">
+                      @error('Judul')
+                          <div class="alert alert-danger">File untuk gambar Sampul Buku diperlukan.</div>
+                        @enderror
+                    </div>
+                    <button type="submit" class="btn btn-success ml-auto">Tambah</button>
+                    <a href="{{ url('library') }}" class="btn btn-warning ml-auto" style="margin-left: 7px;">Kembali</a>
                 </form>
         </div>
 </body>

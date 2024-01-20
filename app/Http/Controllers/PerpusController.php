@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Buku;
+use Illuminate\Support\Facades\Auth;
 
 class PerpusController extends Controller
 {
@@ -25,6 +26,36 @@ class PerpusController extends Controller
     function viewTambahBuku()
     {
         return view('admin/admin_tambahbuku');
+    }
+
+    function proses_tambah_buku(Request $request)
+    {
+        $request->validate([
+            'Judul' => 'required|min:2',
+            'Penulis' => 'required|min:3',
+            'Penerbit' => 'required|min:4',
+            'Sampul' => 'image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        $nama_sampul = $request->Sampul->getClientOriginalName();
+
+        $request->Sampul->storeAs('public/image', $nama_sampul);
+
+        $Judul_buku = $request->Judul;
+        $Penulis_buku = $request->Penulis;
+        $Penerbit_buku = $request->Penerbit;
+        $Tahun = $request->TahunTerbit;
+
+        Buku::create([
+            'Judul' => $Judul_buku,
+            'Penulis' => $Penulis_buku,
+            'Penerbit' => $Penerbit_buku,
+            'TahunTerbit' => $Tahun,
+            'Sampul' => $request->Sampul->getClientOriginalName(),
+            // 'Sampul' => '0',
+        ]);
+
+        return redirect('/library');
     }
 
     function bookDetails($id){

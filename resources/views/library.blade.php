@@ -45,9 +45,15 @@
             </tbody> 
             </table> --}}
 
-              <a href="library/1">
+              {{-- <a href="library/1">
                 <img width="100" height="150" src="storage/image/Don-Quixote-COVER.jpg">
-              </a> <br><br>
+              </a> --}} 
+              @foreach ($buku as $buku)
+              <a href="library/{{ $buku->BukuID }}" style="margin-right:8px;">
+                <img src="storage/image/{{ $buku->Sampul }}" width="100" height="150">
+              </a>
+              @endforeach
+              <br><br>
               <a href="{{url('add_book')}}"><button type="button" class="btn btn-outline-warning">Tambah buku</button></a>
             </div>
 </body>
