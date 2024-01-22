@@ -63,4 +63,10 @@ class PerpusController extends Controller
         return view('/bookdetails', ['buku' => $buku]);
     }
 
+    function hapus($id)
+    {
+        // DB::table('pengaduan')->where('id_pengaduan','=',$id)->delete();
+        Buku::where('BukuID', '=', $id)->delete();
+        return redirect()->back();
+    }
 }

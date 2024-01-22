@@ -52,7 +52,7 @@
                           <div class="alert alert-danger">Kolom Penerbit Buku harus di isi minimal 4 huruf.</div>
                         @enderror
                         <label for="TahunTerbit">Tahun Terbit</label>
-                        <input type="number" class="form-control" id="TahunTerbit" name="TahunTerbit" min="1100" max="2025" style="width: 13%;" placeholder="1100-2025">
+                        <input type="date" class="form-control" id="TahunTerbit" name="TahunTerbit" min="1100" max="2025" style="width: 13%;" placeholder="1100-2025">
                         @error('Judul')
                           <div class="alert alert-danger">Kolom Tahun Terbit harus di isi minimal dari tahun 1100 sampai dengan 2025.</div>
                         @enderror

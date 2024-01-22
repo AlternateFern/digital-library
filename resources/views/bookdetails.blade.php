@@ -22,7 +22,7 @@
 <body>
         @include('layouts.navbar')
         @foreach ($buku as $buku)
-        <div class="container mt-5 d-inline-flex">
+        <div class="container-fluid mt-5 mb-5 d-inline-flex">
             <img src="../storage/image/{{ $buku->Sampul }}" width="200" height="300">
             <div class="d-column mx-4">
                 <h2>{{ $buku->Judul }}</h2>
@@ -30,11 +30,9 @@
                 <h2>{{ $buku->Penerbit }}</h2>
                 <h2>{{ $buku->TahunTerbit }}</h2>
             </div>
-            @endforeach
             </div>
             <a href="{{url('library')}}"><button type="button" class="btn btn-outline-warning">Kembali</button></a>
-        
-            
-         
+            <a href="../hapus/{{$buku->BukuID}}"><button type="button" class="btn btn-outline-danger">Hapus</button></a>
+            @endforeach
 </body>
 </html>
