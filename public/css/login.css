@@ -54,6 +54,18 @@ h3 {
     margin-top: 30px;
 }
 
+.text-center>p {
+    font-family: NanumM;
+    color: rgb(255, 217, 0);
+    text-shadow: 1px 1px 5px rgb(255, 217, 0);
+}
+
+.text-center>p>a {
+    font-family: NanumM;
+    color: rgb(255, 229, 85);
+    text-shadow: 1px 1px 5px rgb(255, 217, 0);
+}
+
 .btn-grad {
     background-image: linear-gradient(
         to right,
@@ -130,14 +142,6 @@ h3 {
     flex-flow: row wrap;
     align-items: center;
 }
-
-/* .form-control {
-    width: 100%;
-    color: #495057;
-    background-color: #fff;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-  } */
 
 .eye-icon {
     cursor: pointer;

@@ -16,7 +16,7 @@ class LoginController extends Controller
     {   
         $dataLogin = $request->only("username", "password");
         // dd($dataLogin);
-        if (Auth::attempt($dataLogin)) {
+        if (Auth::attempt($dataLogin) && Auth::user()->role === 'peminjam') {
             return redirect('/home');
         } else {
             return redirect()->back()->with("error", "Username atau Password Salah");
@@ -38,7 +38,7 @@ class LoginController extends Controller
     {   
         $dataLogin = $request->only("username", "password");
         // dd($dataLogin);
-        if (Auth::attempt($dataLogin)) {
+        if (Auth::attempt($dataLogin) && in_array(Auth::user()->role, ['admin', 'petugas'])) {
             return redirect('/home');
         } else {
             return redirect()->back()->with("error", "Username atau Password Salah");
@@ -48,6 +48,6 @@ class LoginController extends Controller
     function logoutAdmin()
     {
         Auth::logout();
-        return redirect('/login');
+        return redirect('admin/login');
     }
 }

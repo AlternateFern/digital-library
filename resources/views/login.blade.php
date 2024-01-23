@@ -38,7 +38,8 @@
             </div>
         </form>
         <div class="text-center">
-            <a href="#">Lupa kata sandi?</a> atau <a href="{{url('register')}}">Daftar</a>
+            <p><a href="#">Lupa kata sandi?</a> atau <a href="{{url('register')}}">Daftar</a></p>
+            <p><a href="{{ url('admin/login') }}">login admin disini.</a></p>
         </div>
     </div>
     </div>

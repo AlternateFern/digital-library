@@ -33,3 +33,14 @@ div>h2 {
     transform: skew(20deg);
     transform-origin: 0;
 }
+
+.h2-background-shape>h2 {
+    text-align:center;
+    transform: skew(-20deg);
+}
+
+.h2-background-shape>p {
+    text-align:center;
+    margin-right:20px;
+    transform: skew(-20deg);
+}

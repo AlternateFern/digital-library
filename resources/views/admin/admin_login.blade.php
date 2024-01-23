@@ -7,11 +7,11 @@
     <title>Login (Admin) | Perpustakaan Digital / Digital Library</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-    <script src="{{ asset('js/togglepassword.js') }}"></script>
+    <script src="{{ asset('js/togglepassword_admin.js') }}"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Login</h1>
+        <h1>Login (Admin)</h1>
         <h3>Silahkan "Login" terlebih dahulu!</h3>
 
         @if(session("error"))
@@ -38,7 +38,7 @@
             </div>
         </form>
         <div class="text-center">
-            <a href="#">Lupa kata sandi?</a> atau <a href="{{url('register')}}">Daftar</a>
+            <p><a href="#">Lupa kata sandi?</a> atau <a href="{{url('register')}}">Daftar</a></p>
         </div>
     </div>
     </div>

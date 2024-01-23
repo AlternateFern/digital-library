@@ -32,7 +32,9 @@
             </div>
             </div>
             <a href="{{url('library')}}"><button type="button" class="btn btn-outline-warning">Kembali</button></a>
+            @if (in_array(Auth::user()->role, ['admin', 'petugas']))
             <a href="../hapus/{{$buku->BukuID}}"><button type="button" class="btn btn-outline-danger">Hapus</button></a>
+            @endif
             @endforeach
 </body>
 </html>
