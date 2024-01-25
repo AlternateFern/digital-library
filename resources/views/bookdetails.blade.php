@@ -12,24 +12,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
     <style>
+        
         html, body {
             background-color: rgb(37, 22, 4);
+            background-image: url('../storage/image/Library_Entrance.png');
+            background-size: auto;
         }
 
-        
     </style>
 </head>
 <body>
         @include('layouts.navbar')
         @foreach ($buku as $buku)
-        <div class="container-fluid mt-5 mb-5 d-inline-flex">
-            <img src="../storage/image/{{ $buku->Sampul }}" width="200" height="300">
-            <div class="d-column mx-4">
-                <h2>{{ $buku->Judul }}</h2>
-                <h2>{{ $buku->Penulis }}</h2>
-                <h2>{{ $buku->Penerbit }}</h2>
-                <h2>{{ $buku->TahunTerbit }}</h2>
-            </div>
+        <div class="container-fluid mt-4 bookdetail-container">
+            <h2 class="text-center">{{ $buku->Judul }}</h2>
+            <div class="container-fluid mt-2 mb-5 d-inline-flex justify-content-center flex-wrap">
+                <img src="../storage/image/{{ $buku->Sampul }}" width="200" height="300" class="d-block">
+                    <div class="d-column mx-4 text-center">
+                        <h2>{{ $buku->Penulis }}</h2>
+                        <h2>{{ $buku->Penerbit }}</h2>
+                        <h2>{{ $buku->TahunTerbit }}</h2>
+                        <p style="text-align: start;">{{ $buku->Isi }}</p>
+                    </div>
+                </div>
             </div>
             <a href="{{url('library')}}"><button type="button" class="btn btn-outline-warning">Kembali</button></a>
             @if (in_array(Auth::user()->role, ['admin', 'petugas']))

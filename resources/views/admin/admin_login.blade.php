@@ -23,7 +23,7 @@
             @CSRF
             <div class="form-group form-anim">
 
-                <input type="text" class="form-control" name="username" id="username" placeholder="Username" autocomplete="on">
+                <input type="text" class="form-control" name="username" id="username" placeholder="Username" autocomplete="off">
                 <div class="bar"></div>
                 <div class="form-inline">
                     <input type="password" class="form-control" name="password" id="password" placeholder="Password" style="width:90%;">

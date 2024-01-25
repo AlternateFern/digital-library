@@ -44,7 +44,7 @@ div > h2 {
     transform: skew(-20deg);
 }
 
-.char {
+.bg-char {
     position: fixed;
     width: 306;
     height: 806px;
@@ -59,4 +59,24 @@ div > h2 {
 
 .data-buku {
     text-shadow: 0px 0px 10px rgb(255, 217, 0);
+}
+
+.d-column>p {
+    color: rgb(255, 200, 98);
+}
+
+.bookdetail-container {
+    background-color: rgba(37, 22, 4, 0.5);
+}
+
+::-webkit-scrollbar {
+    width: 7px; /* Set the width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 200, 98); /* Set the color of the scrollbar thumb */
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(22, 11, 1); /* Set the color of the scrollbar track */
 }

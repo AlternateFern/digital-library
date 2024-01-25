@@ -15,6 +15,7 @@
             body {
                 background-color: rgb(37, 22, 4);
                 background-image: url('storage/image/Library_Entrance.png');
+                background-size: cover;
             }
 
             td {
@@ -39,13 +40,13 @@
               <button type="button" class="btn btn-outline-warning">Tambah buku</button>
             </a>@endif
         </div>
-        <img class="char" src="{{ asset('storage/charimg/char1.png') }}" alt="lor-characters"/>
+        <img class="bg-char" src="{{ asset('storage/image/patronlibrarians/char1.png') }}" alt="lor-characters"/>
         <script>
-            // Randomize the background image with a 75% chance
-            if (Math.random() < 0.75) {
-                const randomImageIndex = Math.floor(Math.random() * 15) + 1;
-                const imagePath = `storage/charimg/char${randomImageIndex}.png`;
-                document.querySelector(".char").src = `{{ asset('${imagePath}') }}`;
+            // Randomize the background image with a 65% chance
+            if (Math.random() < 0.65) {
+                const randomImageIndex = Math.floor(Math.random() * 12) + 1;
+                const imagePath = `storage/image/patronlibrarians/char${randomImageIndex}.png`;
+                document.querySelector(".bg-char").src = `{{ asset('${imagePath}') }}`;
             }
         </script>
     </body>
