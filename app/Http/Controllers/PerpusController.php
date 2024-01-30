@@ -34,6 +34,7 @@ class PerpusController extends Controller
             'Judul' => 'required|min:2',
             'Penulis' => 'required|min:3',
             'Penerbit' => 'required|min:4',
+            'Isi' => 'required|min:10',
             'Sampul' => 'image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
@@ -45,12 +46,14 @@ class PerpusController extends Controller
         $Penulis_buku = $request->Penulis;
         $Penerbit_buku = $request->Penerbit;
         $Tahun = $request->TahunTerbit;
+        $Isi = $request->Isi;
 
         Buku::create([
             'Judul' => $Judul_buku,
             'Penulis' => $Penulis_buku,
             'Penerbit' => $Penerbit_buku,
             'TahunTerbit' => $Tahun,
+            'Isi' => $Isi,
             'Sampul' => $request->Sampul->getClientOriginalName(),
             // 'Sampul' => '0',
         ]);
@@ -67,6 +70,6 @@ class PerpusController extends Controller
     {
         // DB::table('pengaduan')->where('id_pengaduan','=',$id)->delete();
         Buku::where('BukuID', '=', $id)->delete();
-        return redirect()->back();
+        return redirect('/library');
     }
 }

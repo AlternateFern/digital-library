@@ -56,6 +56,11 @@
                         @error('Judul')
                           <div class="alert alert-danger">Kolom Tahun Terbit harus di isi minimal dari tahun 1100 sampai dengan 2025.</div>
                         @enderror
+                        <label for="TahunTerbit">Isi</label>
+                        <textarea class="form-control" rows="3" name="Isi" id="Isi" placeholder="Isi buku"></textarea>
+                        @error('Judul')
+                          <div class="alert alert-danger">Kolom Isi harus di isi minimal 10 huruf.</div>
+                        @enderror
                       <label for="Sampul" class="form-label">Sampul Buku</label>
                       <input type="file" class="form-control" id="Sampul" name="Sampul">
                       @error('Judul')
