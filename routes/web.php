@@ -35,4 +35,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/add_book', [PerpusController::class, 'viewTambahBuku']);
     Route::post('/add_book', [PerpusController::class, 'proses_tambah_buku']);
     Route::get('/hapus/{id}', [PerpusController::class, 'hapus']);
+    Route::post('library/pinjam/{id}', [PerpusController::class, 'store']);
 });

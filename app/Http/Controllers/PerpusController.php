@@ -5,15 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Buku;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PerpusController extends Controller
 {
     function viewHome()
     {
-        // Elloquent ORM
-        // $pengaduan = Pengaduan::where('nik', Auth::user()->nik)->get();
-
-        // return view('/home', ["pengaduan" => $pengaduan]);
         return view('/home');
     }
 
@@ -55,13 +52,13 @@ class PerpusController extends Controller
             'TahunTerbit' => $Tahun,
             'Isi' => $Isi,
             'Sampul' => $request->Sampul->getClientOriginalName(),
-            // 'Sampul' => '0',
         ]);
 
         return redirect('/library');
     }
 
-    function bookDetails($id){
+    function bookDetails($id)
+    {
         $buku = Buku::where('BukuID', $id)->get();
         return view('/bookdetails', ['buku' => $buku]);
     }
@@ -71,5 +68,23 @@ class PerpusController extends Controller
         // DB::table('pengaduan')->where('id_pengaduan','=',$id)->delete();
         Buku::where('BukuID', '=', $id)->delete();
         return redirect('/library');
+    }
+
+    function store(Request $request, $id)
+    {
+        $today = date('Y-m-d');
+        $date_after_2_days = date('Y-m-d', strtotime($today . ' +2 days'));
+        DB::table('peminjaman')->insert(
+            [
+                'UserID' => Auth()->user()->id,
+                'BukuID' => $id,
+                'TanggalPeminjaman' => $today,
+                'TanggalPengembalian' => $date_after_2_days,
+                'StatusPerminjaman' => "Pending",
+            ]
+        
+        );
+
+        return redirect()->back()->with('Info', 'Buku sudah di pinjam');
     }
 }

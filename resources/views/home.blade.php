@@ -32,7 +32,7 @@
          </div>
             </header>
          <div class="container mt-5">
-         <h2>Trending Books</h2>
+         <h2 class="title-h2-glow">Trending Books</h2>
          <div class="container mt-3">
          <a href="library/1" style="margin-right:20px;">
             <img width="100" height="150" src="storage/image/Don-Quixote-COVER.jpg">

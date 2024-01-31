@@ -24,6 +24,16 @@
         @include('layouts.navbar')
         <div class="container-fluid mt-4 bookdetail-container">
             <a href="{{url('library')}}"><button type="button" class="btn btn-outline-warning">Kembali</button></a>
+            <form action="pinjam/{{$buku->BukuID}}" method="post" class="float-end">
+            @post
+            @csrf
+            <button type="submit" class="btn btn-outline-warning">Pinjam</button>
+            </form>
+            @if (session()->has('Info'))
+            <div class="alert alert-success col-lg-8" role="alert">
+                {{  session('Info') }}
+            </div>
+            @endif
             <h2 class="text-center">{{ $buku->Judul }}</h2>
             <div class="container-fluid mt-2 mb-5 d-inline-flex justify-content-center flex-wrap">
                 <img src="../storage/image/{{ $buku->Sampul }}" width="200" height="300" class="d-block">

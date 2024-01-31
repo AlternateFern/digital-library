@@ -11,6 +11,10 @@ div > h2 {
     color: rgb(255, 196, 0);
 }
 
+label {
+    color: rgb(255, 200, 98);
+}
+
 .home-header {
     display: block;
     position: relative;
@@ -19,6 +23,10 @@ div > h2 {
     background-image: url("../storage/image/The_Library.jpg");
     min-height: 75%;
     height: 75%;
+}
+
+.title-h2-glow {
+    text-shadow: 0px 1px 1.8px rgb(255, 217, 0);
 }
 
 .h2-background-shape {
@@ -46,7 +54,6 @@ div > h2 {
 
 .bg-char {
     position: fixed;
-    width: 306;
     height: 806px;
     right: 50px;
     top: 30vh;
@@ -56,6 +63,19 @@ div > h2 {
     opacity: 0.95;
     pointer-events: none;
 }
+
+.bg-char-2 {
+    position: fixed;
+    height: 806px;
+    right: 10px;
+    top: 30vh;
+    margin: 2rem;
+    background-size: contain;
+    background-position: 100% 100%;
+    opacity: 0.95;
+    pointer-events: none;
+}
+
 
 .data-buku {
     text-shadow: 0px 0px 10px rgb(255, 217, 0);
