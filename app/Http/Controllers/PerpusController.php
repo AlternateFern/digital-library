@@ -59,7 +59,7 @@ class PerpusController extends Controller
 
     function bookDetails($id)
     {
-        $buku = Buku::where('BukuID', $id)->get();
+        $buku = Buku::with('kategori')->find($id);
         return view('/bookdetails', ['buku' => $buku]);
     }
 

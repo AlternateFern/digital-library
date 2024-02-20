@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @foreach ($buku as $buku)
     <title>{{ $buku->Judul }} | Perpustakaan Digital / Digital Library</title>
     <link rel="stylesheet" href="{{ asset('css/library.css') }}">
     <script src="{{ asset('js/refresh.js') }}"></script>
@@ -34,20 +33,26 @@
                 {{  session('Info') }}
             </div>
             @endif
-            <h2 class="text-center">{{ $buku->Judul }}</h2>
+            {{-- <h2 class="text-center">{{ $buku->Judul }}</h2> --}}
             <div class="container-fluid mt-2 mb-5 d-inline-flex justify-content-center flex-wrap">
                 <img src="../storage/image/{{ $buku->Sampul }}" width="200" height="300" class="d-block">
                     <div class="d-column mx-4 text-center">
-                        <h2>{{ $buku->Penulis }}</h2>
-                        <h2>{{ $buku->Penerbit }}</h2>
-                        <h2>{{ $buku->TahunTerbit }}</h2>
-                        <p style="text-align: start;">{{ $buku->Isi }}</p>
+                            <h2>{{ $buku->Penulis }}</h2>
+                            <h2>{{ $buku->Penerbit }}</h2>
+                            <h2>{{ $buku->TahunTerbit }}</h2>
+                            <p style="text-align: start;">{{ $buku->Isi }}</p>
+                        </div>
                     </div>
+                    @foreach ($buku->kategori as $kategoribuku)
+                        <div>
+                            <h2>Categories: {{ $kategoribuku->NamaKategori }}</h2>
+                                @endforeach
+                            </div><br>
                 </div>
-            </div>
+
             @if (in_array(Auth::user()->role, ['admin', 'petugas']))
             <a href="../hapus/{{$buku->BukuID}}"><button type="button" class="btn btn-outline-danger">Hapus</button></a>
             @endif
-            @endforeach
+
 </body>
 </html>

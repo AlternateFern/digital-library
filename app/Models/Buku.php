@@ -12,4 +12,9 @@ class Buku extends Model
     protected $table = "buku";
     protected $primaryKey = 'BukuID';
     protected $fillable = ['Judul','Penulis','Penerbit','TahunTerbit','Isi','Sampul'];
+
+    public function kategori()
+    {
+        return $this->belongsToMany(Kategori::class, 'kategoribuku_relasi', 'BukuID', 'KategoriID');
+    }
 }
