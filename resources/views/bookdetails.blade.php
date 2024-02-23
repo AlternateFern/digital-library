@@ -26,7 +26,7 @@
             <form action="pinjam/{{$buku->BukuID}}" method="post" class="float-end">
             @post
             @csrf
-            <button type="submit" class="btn btn-outline-warning">Pinjam</button>
+            <button type="submit" class="btn btn-outline-primary">Pinjam</button>
             </form>
             @if (session()->has('Info'))
             <div class="alert alert-success col-lg-8" role="alert">
@@ -47,11 +47,12 @@
                         <div>
                             <h2>Categories: {{ $kategoribuku->NamaKategori }}</h2>
                                 @endforeach
-                            </div><br>
-                </div>
+                            </div>
+                            <a href="{{url('library')}}"><button type="button" class="btn btn-outline-warning">Ubah Kategori</button></a>
+                </div><br>
 
             @if (in_array(Auth::user()->role, ['admin', 'petugas']))
-            <a href="../hapus/{{$buku->BukuID}}"><button type="button" class="btn btn-outline-danger">Hapus</button></a>
+            <a href="../hapus/{{$buku->BukuID}}"><button type="button" class="btn btn-outline-danger float-end mx-4">Hapus</button></a>
             @endif
 
 </body>
