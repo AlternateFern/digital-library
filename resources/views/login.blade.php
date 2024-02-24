@@ -10,7 +10,7 @@
     <script src="{{ asset('js/togglepassword.js') }}"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" style="height:525px;">
         <h1>Login</h1>
         <h3>Silahkan "Login" terlebih dahulu!</h3>
 

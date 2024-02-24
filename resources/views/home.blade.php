@@ -1,4 +1,3 @@
-{{-- detail laporan --}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,12 +20,12 @@
          @include('layouts.navbar')
         <header class="home-header" style="max-width:1500px; min-height:300px;">
         <div class="container mt-3 bg" style="position: fixed;top: 30%;left: 50%;transform: translate(-50%, -50%);">
-            <div class="h2-background-shape">
+            <div class="header-h2">
                 @if (in_array(Auth::user()->role, ['admin', 'petugas']))
-                    <h2>Selamat Datang!</h2>
+                    <h2>Library of the City</h2>
                     <p>Kamu login sebagai {{ Auth::user()->role }}!</p>
                 @else
-                    <h2 style="text-align:center; transform: skew(-20deg);">Selamat Datang!</h2>
+                    <h2>Library of the City</h2>
                 @endif
             </div>
          </div>

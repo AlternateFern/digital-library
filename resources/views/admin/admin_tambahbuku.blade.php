@@ -1,4 +1,3 @@
-{{-- detail laporan --}}
 <!DOCTYPE html>
 <html lang="en">
     <head>
