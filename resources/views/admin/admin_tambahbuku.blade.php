@@ -21,12 +21,7 @@
             html,
             body {
                 background-color: rgb(37, 22, 4);
-                background-image: linear-gradient(
-                        to bottom,
-                        rgba(0, 0, 0, 0.068),
-                        rgba(0, 0, 0, 0.493)
-                    ),
-                    url("storage/image/Library_Entrance.png");
+                background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.068),rgba(0, 0, 0, 0.493)), url("storage/image/Library_Entrance.png");
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
@@ -53,24 +48,14 @@
                 <div class="mb-3 d-flex flex-wrap">
                     <div class="flex-column" style="flex: 1;">
                       <label for="Judul" class="form-label">Judul Buku</label>
-                      <input
-                          type="text"
-                          class="form-control"
-                          name="Judul"
-                          id="Judul"
-                          placeholder="Judul buku"/>
+                      <input type="text" class="form-control" name="Judul" id="Judul" placeholder="Judul buku"/>
                       @error('Judul')
                       <div class="alert alert-danger">
                           Kolom Judul Buku harus di isi minimal 2 huruf.
                       </div>
                       @enderror
                       <label for="Penulis" class="form-label">Penulis Buku</label>
-                      <input
-                          type="text"
-                          class="form-control"
-                          name="Penulis"
-                          id="Penulis"
-                          placeholder="Penulis buku"/>
+                      <input type="text" class="form-control" name="Penulis" id="Penulis" placeholder="Penulis buku"/>
                       @error('Judul')
                       <div class="alert alert-danger">
                           Kolom Penulis Buku harus di isi minimal 3 huruf.
@@ -78,56 +63,33 @@
                       @enderror
                      <label for="Penerbit" class="form-label">
                          Penerbit Buku</label>
-                     <input
-                         type="text"
-                         class="form-control"
-                         name="Penerbit"
-                         id="Penerbit"
-                         placeholder="Penerbit buku"/>
+                     <input type="text" class="form-control" name="Penerbit" id="Penerbit" placeholder="Penerbit buku"/>
                      @error('Judul')
                       <div class="alert alert-danger">
                          Kolom Penerbit Buku harus di isi minimal 4 huruf.
                       </div>
                       @enderror
-                      <label for="TahunTerbit" class="form-label">Tahun Terbit</label>
-                      <input
-                          type="date"
-                          class="form-control"
-                          id="TahunTerbit"
-                          name="TahunTerbit"
-                          min="1100"
-                          max="2025"
-                          style="width: 26%"
-                         placeholder="1100-2025"/>
+                      <label for="TahunTerbit" class="form-label">Tanggal Terbit</label>
+                      <input type="date" class="form-control" id="TahunTerbit" name="TahunTerbit" min="1900" max="2025" style="width: 26%" placeholder="1900-2025"/>
                       @error('Judul')
                       <div class="alert alert-danger">
-                          Kolom Tahun Terbit harus di isi minimal dari tahun 1100
+                          Kolom Tanggal Terbit harus di isi minimal dari tahun 1900
                           sampai dengan 2025.
                       </div>
                       @enderror
                       <div style="margin-top:210px;">
-                      <label for="TahunTerbit" class="form-label">Isi</label>
-                      <textarea
-                          class="form-control"
-                          rows="10"
-                          name="Isi"
-                          id="Isi"
-                          style="width:170%;"
-                          placeholder="Isi buku"></textarea>
+                      <label for="Deskripsi" class="form-label">Isi</label>
+                      <textarea class="form-control" rows="10" name="Deskripsi" id="Deskripsi" style="width:170%;" placeholder="Deskripsi buku"></textarea>
                       @error('Judul')
                       <div class="alert alert-danger">
-                          Kolom Isi harus di isi minimal 10 huruf.
+                          Kolom Deskripsi harus di isi minimal 20 huruf.
                       </div>
                       @enderror
                     </div>
                   </div>
                   <div class="flex-column" style="flex: 1; margin-left: 10px; height: 50%;">
                         <label for="Sampul" class="form-label">Sampul Buku</label>
-                        <input
-                            type="file"
-                            class="form-control"
-                            id="Sampul"
-                            name="Sampul"/>
+                        <input type="file" class="form-control" id="Sampul" name="Sampul"/>
                         @error('Judul')
                         <div class="alert alert-danger">
                             File untuk gambar Sampul Buku diperlukan.

@@ -78,6 +78,10 @@ label {
     background-color: rgba(37, 22, 4, 0.5);
 }
 
+.editbtn {
+    position: absolute; bottom: 30px; left: 0;
+}
+
 ::-webkit-scrollbar {
     width: 7px; /* Set the width of the scrollbar */
 }

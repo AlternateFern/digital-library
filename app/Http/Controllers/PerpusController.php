@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Buku;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class PerpusController extends Controller
@@ -31,7 +30,7 @@ class PerpusController extends Controller
             'Judul' => 'required|min:2',
             'Penulis' => 'required|min:3',
             'Penerbit' => 'required|min:4',
-            'Isi' => 'required|min:10',
+            'Deskripsi' => 'required|min:20',
             'Sampul' => 'image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
@@ -43,14 +42,14 @@ class PerpusController extends Controller
         $Penulis_buku = $request->Penulis;
         $Penerbit_buku = $request->Penerbit;
         $Tahun = $request->TahunTerbit;
-        $Isi = $request->Isi;
+        $Deskripsi = $request->Deskripsi;
 
         Buku::create([
             'Judul' => $Judul_buku,
             'Penulis' => $Penulis_buku,
             'Penerbit' => $Penerbit_buku,
             'TahunTerbit' => $Tahun,
-            'Isi' => $Isi,
+            'Deskripsi' => $Deskripsi,
             'Sampul' => $request->Sampul->getClientOriginalName(),
         ]);
 
@@ -68,6 +67,12 @@ class PerpusController extends Controller
         // DB::table('pengaduan')->where('id_pengaduan','=',$id)->delete();
         Buku::where('BukuID', '=', $id)->delete();
         return redirect('/library');
+    }
+
+    function viewEditBuku($id)
+    {
+        $buku = Buku::with('kategori')->find($id);
+        return view('admin/edit_buku', ['buku' => $buku]);
     }
 
     function store(Request $request, $id)

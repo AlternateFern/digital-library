@@ -37,7 +37,6 @@ class LoginController extends Controller
     function loginAdmin(Request $request)
     {   
         $dataLogin = $request->only("username", "password");
-        // dd($dataLogin);
         if (Auth::attempt($dataLogin) && in_array(Auth::user()->role, ['admin', 'petugas'])) {
             return redirect('/home');
         } else {
