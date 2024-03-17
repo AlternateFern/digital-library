@@ -77,18 +77,18 @@ class PerpusController extends Controller
 
     function edit(Request $request, $id)
     {
-
         $request->validate([
             'Judul' => 'required|min:2',
             'Penulis' => 'required|min:3',
             'Penerbit' => 'required|min:4',
-            'TahunTerbit' => 'required|date|after_or_equal:1100|before_or_equal:2025',
+            'TahunTerbit' => 'required|date|before_or_equal:now',
             'Isi' => 'required|min:10',
             // Add validation rules for other fields if needed
         ]);
 
         $buku = Buku::findOrFail($id);
-        return $buku;
+        // dd($buku);
+        // return $buku;
 
         $buku->Judul = $request->Judul;
         $buku->Penulis = $request->Penulis;
@@ -101,7 +101,7 @@ class PerpusController extends Controller
 
         return back()->with('success', 'Book updated successfully.');
     }
-    
+
 
     function pinjam(Request $request, $id)
     {
@@ -115,7 +115,7 @@ class PerpusController extends Controller
                 'TanggalPengembalian' => $date_after_2_days,
                 'StatusPerminjaman' => "Pending",
             ]
-        
+
         );
 
         return redirect()->back()->with('Info', 'Buku sudah di pinjam');
