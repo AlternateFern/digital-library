@@ -29,15 +29,15 @@
             @endif
             <div class="container-fluid mt-2 mb-5 d-inline-flex justify-content-center flex-wrap">
                 <div style="position: relative;">
-                    <img src="../storage/image/{{ $buku->Sampul }}" width="200" height="300" class="d-block">
+                    <img src="../storage/image/book/{{ $buku->Sampul }}" width="200" height="300" class="d-block">
                 </div>
                 <form action="{{url("/edit/$buku->BukuID")}}" method="POST" enctype="multipart/form-data" class="mb-3">
-                    @method('POST')
-                    @csrf
+                        @csrf
+                        @method('POST')
                     <div class="d-column mx-4 text-center">
-                            <textarea class="" nama="Penulis" id="Penulis" rows="1" placeholder="Penulis">{{ $buku->Penulis }}</textarea>
-                            <h2>{{ $buku->Penerbit }}</h2>
-                            <h2>{{ $buku->TahunTerbit }}</h2>
+                            <textarea class="" name="Penulis" id="Penulis" rows="1" placeholder="Penulis">{{ $buku->Penulis }}</textarea>
+                            <textarea class="" name="Penerbit" id="Penerbit" rows="1" placeholder="Penerbit">{{ $buku->Penerbit }}</textarea>
+                            <input type="date" class="form-control" id="TahunTerbit" name="TahunTerbit" min="1900" max="2025" style="width: 26%" placeholder="{{ $buku->TahunTerbit }}"/>
                             <p style="text-align: start;">{{ $buku->Deskripsi }}</p>
                         </div>
                         <
@@ -47,7 +47,9 @@
                             <h2>Categories: {{ $kategoribuku->NamaKategori }}</h2>
                                 @endforeach
                             </div>
+                        <button type="submit" class="btn btn-sm btn-success ml-auto" style="padding: 4px 20px; margin-right: 3px; margin-top:">Simpan</button>
                 </div><br>
+            </form>
 
             @if (in_array(Auth::user()->role, ['admin', 'petugas']))
             <a href="../hapus/{{$buku->BukuID}}"><button type="button" class="btn btn-outline-danger float-end mx-4">Hapus</button></a>

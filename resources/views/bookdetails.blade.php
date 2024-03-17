@@ -22,20 +22,25 @@
         @include('layouts.navbar')
         <div class="container-fluid mt-4 bookdetail-container">
             <a href="{{url('library')}}"><button type="button" class="btn btn-outline-warning">Kembali</button></a>
-            <form action="pinjam/{{$buku->BukuID}}" method="post" class="float-end">
-            @post
-            @csrf
-            <button type="submit" class="btn btn-outline-primary">Pinjam</button>
-            </form>
+            <a class="editbtn" href="../edit/{{ $buku->BukuID }}"><img src="../storage/image/pencil.png" width="35" height="35"></a>
+            
+
             @if (session()->has('Info'))
             <div class="alert alert-success col-lg-8" role="alert">
                 {{  session('Info') }}
             </div>
             @endif
             <div class="container-fluid mt-2 mb-5 d-inline-flex justify-content-center">
+                
                 <div style="position: relative;">
-                    <img src="../storage/image/{{ $buku->Sampul }}" width="200" height="300" class="d-block">
-                    <a class="editbtn" href="../edit/{{ $buku->BukuID }}"><img src="../storage/image/pencil.png" width="35" height="35"></a>
+                    <img src="../storage/image/book/{{ $buku->Sampul }}" width="200" height="300" class="d-block">
+                    <form action="pinjam/{{$buku->BukuID}}" method="post" style="margin-top:5px; margin-left: 65px;">
+                        @csrf
+                        <button type="submit" class="btn btn-outline-primary">Pinjam</button>
+                        </form>
+                        @if (in_array(Auth::user()->role, ['admin', 'petugas']))
+                        <a class="deletebtn" href="../hapus/{{$buku->BukuID}}"><img src="../storage/image/trashcan.png" width="35" height="35"></a>
+                        @endif
                 </div>
                     <div class="d-column mx-5">
                             <h2>{{ $buku->Penulis }}</h2>
@@ -44,6 +49,7 @@
                             <p style="text-align: start;">{{ $buku->Deskripsi }}</p>
                         </div>
                     </div>
+                    
                     @foreach ($buku->kategori as $kategoribuku)
                         <div>
                             <h2>Categories: {{ $kategoribuku->NamaKategori }}</h2>
@@ -54,9 +60,6 @@
                             @endif
                 </div><br>
 
-            @if (in_array(Auth::user()->role, ['admin', 'petugas']))
-            <a href="../hapus/{{$buku->BukuID}}"><button type="button" class="btn btn-outline-danger float-end mx-4">Hapus</button></a>
-            @endif
 
 </body>
 </html>

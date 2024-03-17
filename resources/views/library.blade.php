@@ -30,7 +30,7 @@
         <div class="container mt-3">
             @foreach ($buku as $buku)
             <a href="library/{{ $buku->BukuID }}" style="margin-right: 8px">
-                <img src="storage/image/{{ $buku->Sampul }}" width="100" height="150"/>
+                <img src="storage/image/book/{{ $buku->Sampul }}" width="100" height="150"/>
             </a>
             @endforeach
             <br /><br />
@@ -43,7 +43,7 @@
         <script>
             // Randomize the background image with a 65% chance
             if (Math.random() < 0.65) {
-                const randomImageIndex = Math.floor(Math.random() * 12) + 1;
+                const randomImageIndex = Math.floor(Math.random() * 11) + 1;
                 const imagePath = `storage/image/patronlibrarians/char${randomImageIndex}.png`;
                 document.querySelector(".bg-char").src = `{{ asset('${imagePath}') }}`;
             }

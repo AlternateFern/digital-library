@@ -79,7 +79,11 @@ label {
 }
 
 .editbtn {
-    position: absolute; bottom: 30px; left: 0;
+    float: inline-end;
+}
+
+.deletebtn {
+    position: absolute; bottom: 0; right: 0;
 }
 
 ::-webkit-scrollbar {

@@ -34,10 +34,10 @@
          <h2 class="title-h2-glow">Trending Books</h2>
          <div class="container mt-3">
          <a href="library/1" style="margin-right:20px;">
-            <img width="100" height="150" src="storage/image/Don-Quixote-COVER.jpg">
+            <img width="100" height="150" src="storage/image/book/Don-Quixote-COVER.jpg">
           </a>
           <a href="library/2" style="margin-right:20px;">
-            <img width="100" height="150" src="storage/image/To_Kill_a_Mockingbird_(first_edition_cover).jpg">
+            <img width="100" height="150" src="storage/image/book/To_Kill_a_Mockingbird_(first_edition_cover).jpg">
           </a>
          </div>
          </div>

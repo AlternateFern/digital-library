@@ -75,7 +75,35 @@ class PerpusController extends Controller
         return view('admin/edit_buku', ['buku' => $buku]);
     }
 
-    function store(Request $request, $id)
+    function edit(Request $request, $id)
+    {
+
+        $request->validate([
+            'Judul' => 'required|min:2',
+            'Penulis' => 'required|min:3',
+            'Penerbit' => 'required|min:4',
+            'TahunTerbit' => 'required|date|after_or_equal:1100|before_or_equal:2025',
+            'Isi' => 'required|min:10',
+            // Add validation rules for other fields if needed
+        ]);
+
+        $buku = Buku::findOrFail($id);
+        return $buku;
+
+        $buku->Judul = $request->Judul;
+        $buku->Penulis = $request->Penulis;
+        $buku->Penerbit = $request->Penerbit;
+        $buku->TahunTerbit = $request->TahunTerbit;
+        $buku->Isi = $request->Isi;
+
+
+        $buku->save();
+
+        return back()->with('success', 'Book updated successfully.');
+    }
+    
+
+    function pinjam(Request $request, $id)
     {
         $today = date('Y-m-d');
         $date_after_2_days = date('Y-m-d', strtotime($today . ' +2 days'));
