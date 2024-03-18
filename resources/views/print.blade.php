@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="{{ asset('css/library.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.3/JsBarcode.all.min.js"></script>
     <style>
+    * {
+        font-family: 'Times New Roman', Times, serif;
+    }
     ul {
         list-style: none;
         padding: 0;
