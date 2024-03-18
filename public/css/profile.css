@@ -1,0 +1,16 @@
+@font-face { font-family: NanumM; src: url('../storage/font/NanumMyeongjo.ttf'); } 
+
+.container > h4 {
+    font-family: NanumM;
+    color: rgb(255, 217, 0) !important;
+}
+
+.container > h1 {
+    font-family: NanumM;
+    color: rgb(255, 217, 0) !important;
+    font-size: 56px;
+};
+
+.container {
+    position: fixed;top: 30%;left: 50%;transform: translate(-50%, -50%);
+}

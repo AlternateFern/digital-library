@@ -1,3 +1,5 @@
+@font-face { font-family: NanumM; src: url('../storage/font/NanumMyeongjo.ttf'); } 
+
 * {
     margin: 0;
     padding: 0;
@@ -37,6 +39,8 @@ label {
 }
 
 .header-h2 > p {
+    color: #5d9985;
+    text-shadow: 0px 1px 5px #5d9985, 0px 1px 6px black;
     text-align: center;
     margin-right: 20px;
 }
@@ -72,6 +76,15 @@ label {
 
 .d-column>p {
     color: rgb(255, 200, 98);
+    font-family: NanumM;
+}
+
+.d-column>h2 {
+    font-family: NanumM;
+}
+
+div>h2,p {
+    font-family: NanumM;
 }
 
 .bookdetail-container {
@@ -100,4 +113,12 @@ label {
 
 #Isi {
     resize: none;
+}
+
+.container-buku-peminjaman {
+    display: flex;
+}
+
+.container-buku-peminjaman>h2 {
+    margin-left: 20px;
 }

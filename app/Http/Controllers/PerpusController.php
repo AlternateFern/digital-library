@@ -106,18 +106,20 @@ class PerpusController extends Controller
     function pinjam(Request $request, $id)
     {
         $today = date('Y-m-d');
-        $date_after_2_days = date('Y-m-d', strtotime($today . ' +2 days'));
+        $date_after_1_week = date('Y-m-d', strtotime($today . ' +7 days'));
         DB::table('peminjaman')->insert(
             [
-                'UserID' => Auth()->user()->id,
+                'UserID' => Auth()->user()->UserID,
                 'BukuID' => $id,
                 'TanggalPeminjaman' => $today,
-                'TanggalPengembalian' => $date_after_2_days,
+                'TanggalPengembalian' => $date_after_1_week,
                 'StatusPerminjaman' => "Pending",
             ]
 
         );
 
-        return redirect()->back()->with('Info', 'Buku sudah di pinjam');
+        return redirect()->back()->with('Info', 'Buku sudah di pinjam, Silahkan lihat profil anda!');
     }
+
+
 }

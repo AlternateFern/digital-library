@@ -22,8 +22,9 @@
         @include('layouts.navbar')
         <div class="container-fluid mt-4 bookdetail-container">
             <a href="{{url('library')}}"><button type="button" class="btn btn-outline-warning">Kembali</button></a>
+            @if (in_array(Auth::user()->role, ['admin', 'petugas']))
             <a class="editbtn" href="../edit/{{ $buku->BukuID }}"><img src="../storage/image/pencil.png" width="35" height="35"></a>
-            
+            @endif
 
             @if (session()->has('Info'))
             <div class="alert alert-success col-lg-8" role="alert">
@@ -43,9 +44,10 @@
                         @endif
                 </div>
                     <div class="d-column mx-5">
-                            <h2>{{ $buku->Penulis }}</h2>
-                            <h2>{{ $buku->Penerbit }}</h2>
-                            <h2>{{ $buku->TahunTerbit }}</h2>
+                            <h2>{{ $buku->Judul }}</h2>
+                            <p>{{ $buku->Penulis }}</p>
+                            <p>{{ $buku->Penerbit }}</p>
+                            <p>{{ $buku->TahunTerbit }}</p>
                             <p style="text-align: start;">{{ $buku->Deskripsi }}</p>
                         </div>
                     </div>

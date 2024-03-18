@@ -38,6 +38,7 @@
                 <img src="../storage/image/book/{{ $buku->Sampul }}" width="200" height="300" class="d-block">
             </div>
             <form action="{{ url("/edit/$buku->BukuID") }}" method="POST" enctype="multipart/form-data" class="mb-3">
+                @method('POST')
                 @csrf
                 <div class="d-column mx-4 text-center">
                     <input type="text" name="Judul" value="{{ $buku->Judul }}">
@@ -46,19 +47,18 @@
                     <input type="date" class="form-control" id="TahunTerbit" name="TahunTerbit" min="1900"
                         max="2025" value="{{ $buku->TahunTerbit }}" style="width: 26%"
                         placeholder="{{ $buku->TahunTerbit }}" />
-                    <textarea name="Isi" id="" cols="30" rows="10">{{ $buku->Isi }}</textarea>
+                    <textarea name="Isi" id="Isi" cols="30" rows="10">{{ $buku->Isi }}</textarea>
                     <p style="text-align: start;">{{ $buku->Deskripsi }}</p>
+                    <button type="submit" class="btn btn-sm btn-success ml-auto" style="padding: 4px 20px; margin-right: 3px; margin-top:">Simpan</button>
                 </div>
+            </div><br>
+            </form>
         </div>
         @foreach ($buku->kategori as $kategoribuku)
             <div>
                 <h2>Categories: {{ $kategoribuku->NamaKategori }}</h2>
         @endforeach
     </div>
-    <button type="submit" class="btn btn-sm btn-success ml-auto"
-        style="padding: 4px 20px; margin-right: 3px; margin-top:">Simpan</button>
-    </div><br>
-    </form>
 
     @if (in_array(Auth::user()->role, ['admin', 'petugas']))
         <a href="../hapus/{{ $buku->BukuID }}"><button type="button"

@@ -3,6 +3,8 @@
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PerpusController;
+use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\PeminjamanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,10 +34,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', [PerpusController::class, 'viewHome']);
     Route::get('/library', [PerpusController::class, 'viewLibrary']);
     Route::get('/library/{id}', [PerpusController::class, 'bookDetails']);
+    Route::get('/profil', [ProfilController::class, 'index'])->name('profile');
     Route::get('/add_book', [PerpusController::class, 'viewTambahBuku']);
     Route::post('/add_book', [PerpusController::class, 'proses_tambah_buku']);
     Route::get('/hapus/{id}', [PerpusController::class, 'hapus']);
     Route::get('/edit/{id}', [PerpusController::class, 'viewEditBuku']);
     Route::post('/edit/{id}', [PerpusController::class, 'edit']);
     Route::post('library/pinjam/{id}', [PerpusController::class, 'pinjam']);
+    Route::get('/peminjaman', [PeminjamanController::class, 'listpinjam']);
+    Route::get('/print', [PeminjamanController::class, 'printpinjam']);
 });
