@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PerpusController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\PeminjamanController;
+use App\Http\Controllers\UlasanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,7 +41,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/hapus/{id}', [PerpusController::class, 'hapus']);
     Route::get('/edit/{id}', [PerpusController::class, 'viewEditBuku']);
     Route::post('/edit/{id}', [PerpusController::class, 'edit']);
+    Route::post('/ulasan/store', [UlasanController::class, 'store'])->name('ulasan.store');
     Route::post('library/pinjam/{id}', [PerpusController::class, 'pinjam']);
     Route::get('/peminjaman', [PeminjamanController::class, 'listpinjam']);
+    Route::get('/hapus_peminjaman/{id}', [PeminjamanController::class, 'hapus_peminjaman']);
     Route::get('/print', [PeminjamanController::class, 'printpinjam']);
 });

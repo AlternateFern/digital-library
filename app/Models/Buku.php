@@ -17,4 +17,9 @@ class Buku extends Model
     {
         return $this->belongsToMany(Kategori::class, 'kategoribuku_relasi', 'BukuID', 'KategoriID');
     }
+
+    public function buku()
+    {
+        return $this->hasMany(Ulasan::class);
+    }
 }

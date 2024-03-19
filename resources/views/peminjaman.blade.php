@@ -28,10 +28,12 @@ background-repeat: no-repeat;
             <h2>Tanggal Pengembalian Buku: {{ $peminjaman->TanggalPengembalian }}</h2>
             <h2>Status Peminjaman Buku: {{ $peminjaman->StatusPeminjaman }}</h2>
             </div>
-        @endforeach
         <a href="{{ url('print') }}">
             <button type="button" class="btn btn-outline-primary">Print</button>
           </a>
+
+          <a href="hapus_peminjaman/{{$peminjaman->PeminjamanID}}"><img src="../storage/image/trashcan.png" width="35" height="35"></a>
+          @endforeach
     </div>
 </body>
 

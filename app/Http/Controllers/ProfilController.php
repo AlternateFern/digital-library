@@ -16,4 +16,3 @@ class ProfilController extends Controller
         return view('profil', ['user' => $user]);
     }
 }
-

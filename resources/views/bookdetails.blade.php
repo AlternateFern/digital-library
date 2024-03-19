@@ -51,6 +51,25 @@
                             <p style="text-align: start;">{{ $buku->Deskripsi }}</p>
                         </div>
                     </div>
+                    <form action="{{ route('ulasan.store') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="BukuID" value="{{ $buku->BukuID }}">
+                        <h2>Rating :</h2><input type="number" name="Rating" min="1" max="5" rqeuired>
+                        <h2>Ulasan :</h2><br>
+                        <textarea name="Ulasan" required></textarea>
+                        <button type="submit">Berikan Ulasan</button>
+                    </form>
+
+                    <div class="d-column mx-5">
+                    <h2>Ulasan-Ulasan Pembaca</h2>
+                    {{-- @if ($buku->ulasans) --}}
+                        @foreach ($buku->Ulasan as $ulasan)
+                            <p>{{ $ulasan->user->Username }}: {{ $ulasan->Ulasan }}</p>
+                            <p>Rating: {{ $ulasan->Rating }}</p>
+                        @endforeach
+                    {{-- @else --}}
+                    {{-- <p>Belum ada komentar untuk buku ini.</p> --}}
+                    {{-- @endif --}}
                     
                     @foreach ($buku->kategori as $kategoribuku)
                         <div>
