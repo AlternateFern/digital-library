@@ -32,14 +32,11 @@
                     </div>
                 </div>
                 <div class="bar" style="width:90%;"></div>
-                <input type="checkbox" name="rememberme" id="rememberme">
-                <label for="rememberme">Remember Me</label>
                 <button type="submit" name="" class="hoverable-element btn mt-3 btn-block btn-grad active-element">Login</button>
             </div>
         </form>
         <div class="text-center">
-            <p><a href="#">Lupa kata sandi?</a> atau <a href="{{url('register')}}">Daftar</a></p>
-            <p><a href="{{ url('admin/login') }}">login admin disini.</a></p>
+            <p>Belum punya akun? <a href="{{url('register')}}">Daftar</a></p>
         </div>
     </div>
     </div>

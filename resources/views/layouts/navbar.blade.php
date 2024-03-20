@@ -2,12 +2,8 @@
 <nav>
   <a href="{{ url('home') }}">Home</a>
   <a href="{{ url('library') }}">Library</a>
-  <a href="{{ url('home') }}">Trending</a>
-  <a href="{{ url('home') }}">About</a>
-  <a href="{{ url('profil') }}">Profile</a>
-  <a id="logout" href="@if (in_array(Auth::user()->role, ['admin', 'petugas']))
-                {{ url('admin/logout') }}
-                @else
-                    {{ url('logout') }}
-                @endif">Logout</a>
+  @if (in_array(Auth::user()->role, ['admin', 'petugas']))
+    <a href="{{ url('list_peminjaman') }}">List Peminjaman</a>
+  @endif
+  <a id="profile" href="{{ url('profil') }}">Profile</a>
 </nav>

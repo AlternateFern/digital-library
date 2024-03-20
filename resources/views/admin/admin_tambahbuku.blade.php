@@ -21,7 +21,7 @@
             html,
             body {
                 background-color: rgb(37, 22, 4);
-                background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.068),rgba(0, 0, 0, 0.493)), url("storage/image/Library_Entrance.png");
+                background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.068),rgba(0, 0, 0, 0.493)), url("storage/image/bg/Library_Entrance.png");
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
@@ -36,7 +36,36 @@
                 margin-bottom: 10px;
             }
 
+            input[type=text] {
+                outline: none;
+                background-color:transparent;
+                border-color:transparent;
+                border-color:rgb(255, 200, 98);
+                color:rgb(255, 217, 0);
+            }
 
+            input[type=date] {
+                outline: none;
+                background-color:transparent;
+                border-color:transparent;
+                border-color:rgb(255, 200, 98);
+                color:rgb(255, 217, 0);
+            }
+
+            input[type=file] {
+                outline: none;
+                background-color:transparent;
+                border-color:transparent;
+                border-color:rgb(255, 200, 98);
+                color:rgb(255, 217, 0);
+            }
+
+            textarea {
+                outline: none !important;
+                background-color:transparent !important;
+                border-color:rgb(255, 200, 98) !important;
+                color:rgb(255, 217, 0) !important;
+            }
         </style>
     </head>
     <body>

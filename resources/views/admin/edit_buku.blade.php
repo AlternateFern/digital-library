@@ -18,8 +18,34 @@
         html,
         body {
             background-color: rgb(37, 22, 4);
-            background-image: url('../storage/image/Library_Entrance.png');
+            background-image: url('../storage/image/bg/Library_Entrance.png');
             background-size: auto;
+        }
+
+        input[type=text] {
+            outline: none;
+            background-color:transparent;
+            border-color:transparent;
+            border-color:rgb(255, 200, 98);
+            color:rgb(255, 217, 0);
+        }
+        input[type=date] {
+            outline: none;
+            background-color:transparent;
+            border-color:transparent;
+            border-color:rgb(255, 200, 98);
+            color:rgb(255, 217, 0);
+        }
+
+        textarea {
+            outline: none;
+            background-color:transparent;
+            border-color:rgb(255, 200, 98);
+            color:rgb(255, 217, 0);
+        }
+
+        input {
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -27,7 +53,7 @@
 <body>
     @include('layouts.navbar')
     <div class="container-fluid mt-4 bookdetail-container">
-        <a href="{{ url('library') }}"><button type="button" class="btn btn-outline-warning">Kembali</button></a>
+        <a href="{{ url("library/$buku->BukuID") }}"><button type="button" class="btn btn-outline-warning">Kembali</button></a>
         @if (session()->has('Info'))
             <div class="alert alert-success col-lg-8" role="alert">
                 {{ session('Info') }}
@@ -40,15 +66,14 @@
             <form action="{{ url("/edit/$buku->BukuID") }}" method="POST" enctype="multipart/form-data" class="mb-3">
                 @method('POST')
                 @csrf
-                <div class="d-column mx-4 text-center">
-                    <input type="text" name="Judul" value="{{ $buku->Judul }}">
-                    <textarea class="" name="Penulis" id="Penulis" rows="1" placeholder="Penulis">{{ $buku->Penulis }}</textarea>
-                    <textarea class="" name="Penerbit" id="Penerbit" rows="1" placeholder="Penerbit">{{ $buku->Penerbit }}</textarea>
+                <div class="d-column mx-4 edit-container">
+                    <input type="text" name="Judul" value="{{ $buku->Judul }}"><br>
+                    <input type="text" name="Penulis" value="{{ $buku->Penulis }}" id="Penulis" rows="1" placeholder="Penulis"><br>
+                    <input type="text" name="Penerbit" value="{{ $buku->Penerbit }}"" id="Penerbit" rows="1" placeholder="Penerbit"><br>
                     <input type="date" class="form-control" id="TahunTerbit" name="TahunTerbit" min="1900"
                         max="2025" value="{{ $buku->TahunTerbit }}" style="width: 26%"
-                        placeholder="{{ $buku->TahunTerbit }}" />
-                    <textarea name="Isi" id="Isi" cols="30" rows="10">{{ $buku->Isi }}</textarea>
-                    <p style="text-align: start;">{{ $buku->Deskripsi }}</p>
+                        placeholder="{{ $buku->TahunTerbit }}" /><br>
+                    <textarea name="Deskripsi" id="Deskripsi" cols="30" rows="10">{{ $buku->Deskripsi }}</textarea><br>
                     <button type="submit" class="btn btn-sm btn-success ml-auto" style="padding: 4px 20px; margin-right: 3px; margin-top:">Simpan</button>
                 </div>
             </div><br>

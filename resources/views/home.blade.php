@@ -19,20 +19,21 @@
 <body>
          @include('layouts.navbar')
         <header class="home-header" style="max-width:1500px; min-height:300px;">
-        <div class="container mt-3 bg" style="position: fixed;top: 30%;left: 50%;transform: translate(-50%, -50%);">
-            <div class="header-h2">
+        <div class="container bg">
+            <div class="header-h2" style="position: relative; top:88px;">
                 @if (in_array(Auth::user()->role, ['admin', 'petugas']))
                     <h2>Library of the City</h2>
                     <p>Kamu login sebagai {{ Auth::user()->role }}!</p>
                 @else
                     <h2>Library of the City</h2>
+                    <p>Selamat datang di <i>Digital Library</i> atau Perpustakaan Digital, disini kamu bisa menemui berbagai macam jenis buku-buku yang dapat anda pinjam dengan mudah.</p>
                 @endif
             </div>
          </div>
             </header>
          <div class="container mt-5">
-         <h2 class="title-h2-glow">Trending Books</h2>
-         <div class="container mt-3">
+         <h2 class="title-h2-glow">Recommended For You</h2>
+         <div class="container mt-3 mb-5">
          <a href="library/1" style="margin-right:20px;">
             <img width="100" height="150" src="storage/image/book/Don-Quixote-COVER.jpg">
           </a>
@@ -40,7 +41,35 @@
             <img width="100" height="150" src="storage/image/book/To_Kill_a_Mockingbird_(first_edition_cover).jpg">
           </a>
          </div>
+
+         <h2 class="title-h2-glow">Novel</h2>
+         <div class="container mt-3 mb-5">
+         <a href="library/2" style="margin-right:20px;">
+            <img width="100" height="150" src="storage/image/book/To_Kill_a_Mockingbird_(first_edition_cover).jpg">
+          </a>
+          <a href="library/3" style="margin-right:20px;">
+            <img width="100" height="150" src="storage/image/book/TheUndergroundRailroad.png">
+          </a>
+          <a href="library/4" style="margin-right:20px;">
+            <img width="100" height="150" src="storage/image/book/The_Great_Gatsby_Cover_1925_Retouched.png">
+          </a>
          </div>
-        
+         </div>
+
+         <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mt-4">
+                        <h2>About Us</h2>
+                        <p>Perpustakaan Digital atau <i>Digital Library</i></p>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Contact Me</h2>
+                        <p>Email: lahgataujuga@gmail.com</p>
+                        <p>Phone: +62 865 3853 8838</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
 </body>
 </html>

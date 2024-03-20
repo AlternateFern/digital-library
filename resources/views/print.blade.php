@@ -55,12 +55,12 @@
              <li><strong>Nama Peminjam:</strong> {{ $peminjaman->user->username }}</li>
              <li><strong>Nama Buku:</strong> {{ $peminjaman->buku->Judul }}</li>
              <li><strong>Status:</strong> {{ $peminjaman->StatusPeminjaman }}</li>
-             @if ($peminjaman->StatusPeminjaman == 'Approved' || $peminjaman->StatusPeminjaman == 'Selesai' || $peminjaman->StatusPeminjaman == 'Sedang dipinjam')
+             @if ($peminjaman->StatusPeminjaman == 'Diterima' || $peminjaman->StatusPeminjaman == 'Selesai' || $peminjaman->StatusPeminjaman == 'Dipinjam')
             <li><strong>Tanggal Peminjaman:</strong> {{$peminjaman->TanggalPeminjaman}}</li>
             @else
             <li><strong>Tanggal peminjaman:</strong>-</li>
         @endif
-            @if ($peminjaman->StatusPeminjaman == 'Approved' || $peminjaman->StatusPeminjaman == 'Selesai' || $detail->StatusPeminjaman == 'Sedang dipinjam')
+            @if ($peminjaman->StatusPeminjaman == 'Diterima' || $peminjaman->StatusPeminjaman == 'Selesai' || $detail->StatusPeminjaman == 'Dipinjam')
             <li><strong>Tanggal Pengembilan:</strong>{{$peminjaman->TanggalPeminjaman}}</li>
         @else
             <li><strong>Tanggal pengembalian:</strong>-</li>

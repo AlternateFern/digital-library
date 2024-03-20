@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Buku;
+use App\Models\UlasanBuku;
 use Illuminate\Support\Facades\DB;
 
 class PerpusController extends Controller
@@ -30,7 +31,7 @@ class PerpusController extends Controller
             'Judul' => 'required|min:2',
             'Penulis' => 'required|min:3',
             'Penerbit' => 'required|min:4',
-            'Deskripsi' => 'required|min:20',
+            'Deskripsi' => 'required|min:10',
             'Sampul' => 'image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
@@ -59,7 +60,9 @@ class PerpusController extends Controller
     function bookDetails($id)
     {
         $buku = Buku::with('kategori')->find($id);
-        return view('/bookdetails', ['buku' => $buku]);
+        $r = UlasanBuku::where('BukuID', $id)->avg('Rating');
+        $rating = number_format($r, 1);
+        return view('/bookdetails', ['buku' => $buku, 'rating' => $rating]);
     }
 
     function hapus($id)
@@ -82,7 +85,7 @@ class PerpusController extends Controller
             'Penulis' => 'required|min:3',
             'Penerbit' => 'required|min:4',
             'TahunTerbit' => 'required|date|before_or_equal:now',
-            'Isi' => 'required|min:10',
+            'Deskripsi' => 'required|min:10',
             // Add validation rules for other fields if needed
         ]);
 
@@ -94,7 +97,7 @@ class PerpusController extends Controller
         $buku->Penulis = $request->Penulis;
         $buku->Penerbit = $request->Penerbit;
         $buku->TahunTerbit = $request->TahunTerbit;
-        $buku->Isi = $request->Isi;
+        $buku->Deskripsi = $request->Deskripsi;
 
 
         $buku->save();
@@ -113,7 +116,7 @@ class PerpusController extends Controller
                 'BukuID' => $id,
                 'TanggalPeminjaman' => $today,
                 'TanggalPengembalian' => $date_after_1_week,
-                'StatusPerminjaman' => "Pending",
+                'StatusPeminjaman' => "Pending",
             ]
 
         );

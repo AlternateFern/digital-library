@@ -1,0 +1,64 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+  
+  /* Modal Content/Box */
+.modal-content {
+    background-color: rgb(22, 11, 1) !important;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40% !important;
+}
+  
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    width:5%;
+}
+  
+.close:hover,
+.close:focus {
+    color: rgb(255, 200, 98);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#deletebutton {
+    margin: auto;
+    background-image: linear-gradient(
+        to right,
+        #c40c0c 0%,
+        #ff0000 50%,
+        #c40c0c 100%
+    );
+    padding: 3px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    font-weight: bold;
+    color: black;
+    box-shadow: 0 0 20px black;
+    border-radius: 5px;
+    display: block;
+    border-color: transparent;
+}
+    
+#deletebutton:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 0 15px red;
+}

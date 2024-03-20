@@ -22,7 +22,7 @@ label {
     position: relative;
     background-position: center;
     background-size: cover;
-    background-image: url("../storage/image/The_Library.jpg");
+    background-image: url("../storage/image/bg/The_Library.png");
     min-height: 75%;
     height: 75%;
 }
@@ -39,10 +39,11 @@ label {
 }
 
 .header-h2 > p {
-    color: #5d9985;
-    text-shadow: 0px 1px 5px #5d9985, 0px 1px 6px black;
+    color: #fdeb49;
+    text-shadow: 0px 1px 5px #fdeb49, 0px 1px 6px black;
     text-align: center;
-    margin-right: 20px;
+    margin-right: 40px;
+    font-weight: bold;
 }
 
 .bg-char {
@@ -87,8 +88,26 @@ div>h2,p {
     font-family: NanumM;
 }
 
+div>form>h2,p {
+    font-family: NanumM;
+    color: rgb(255, 196, 0);
+}
+
 .bookdetail-container {
     background-color: rgba(37, 22, 4, 0.5);
+}
+
+.book-rating-container {
+    margin:0;
+    padding: 15px;
+    position: relative;
+    right:48px;
+    width:100%;
+    background-color: rgba(37, 22, 4, 0.5);
+}
+
+.edit-container>input {
+    width: 100% !important;
 }
 
 .editbtn {
@@ -97,6 +116,17 @@ div>h2,p {
 
 .deletebtn {
     position: absolute; bottom: 0; right: 0;
+}
+
+.deletebtn-2 {
+    padding: 5px 12px 5px 12px; /* t r b l */
+    background-color: transparent;
+    border-color: transparent;
+    transition: 0.5s;
+}
+
+.deletebtn-2:hover {
+    border-color: red;
 }
 
 ::-webkit-scrollbar {
@@ -117,8 +147,24 @@ div>h2,p {
 
 .container-buku-peminjaman {
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.container-buku-peminjaman>h2 {
-    margin-left: 20px;
+.container-buku-peminjaman>img {
+    margin-top: 20px;
+}
+
+.container-list-buku-peminjaman {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#InfoPeminjaman>h2 {
+    font-size: 26px;
+}
+
+.footer {
+    background-color: black !important;
 }

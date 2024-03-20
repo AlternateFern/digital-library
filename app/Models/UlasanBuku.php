@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class UlasanBuku extends Model
 {   
+    protected $primarykey = 'UlasanID';
     protected $fillable = ['UserID','BukuID','Ulasan','Rating'];
     protected $table = 'ulasanbuku';
     public $timestamps = false;

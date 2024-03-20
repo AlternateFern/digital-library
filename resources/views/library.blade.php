@@ -13,7 +13,7 @@
             html,
             body {
                 background-color: rgb(37, 22, 4);
-                background-image: url('storage/image/Library_Entrance.png');
+                background-image: url('storage/image/bg/Library_Entrance.png');
                 background-size: cover;
             }
 
@@ -38,10 +38,10 @@
             <a href="{{ url('add_book') }}">
               <button type="button" class="btn btn-outline-warning">Tambah buku</button>
             </a>@endif
+            <a href="{{url('home')}}"><button type="button" class="btn btn-outline-warning">Kembali</button></a>
         </div>
         <img class="bg-char" src="{{ asset('storage/image/patronlibrarians/char1.png') }}" alt="lor-characters"/>
         <script>
-            // Randomize the background image with a 65% chance
             if (Math.random() < 0.65) {
                 const randomImageIndex = Math.floor(Math.random() * 11) + 1;
                 const imagePath = `storage/image/patronlibrarians/char${randomImageIndex}.png`;

@@ -13,32 +13,8 @@
     <style>
         html, body {
             background-color: rgb(37, 22, 4);
-            background-image: url('../storage/image/bg/Library_Entrance.png');
+            background-image: url('../storage/image/Library_Entrance.png');
             background-size: auto;
-        }
-
-        input[type=number]::-webkit-inner-spin-button,
-        input[type=number]::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        input[type=number] {
-            outline: none;
-            background-color:transparent;
-            border-color:transparent;
-            color:rgb(255, 217, 0);
-        }
-
-        textarea {
-            outline: none;
-            background-color:transparent;
-            border-color:rgb(255, 200, 98);
-            color:rgb(255, 217, 0);
-        }
-
-        input[type=number]:focus {
-            outline: none;
         }
     </style>
 </head>
@@ -51,7 +27,7 @@
             @endif
 
             @if (session()->has('Info'))
-            <div class="alert alert-success col-lg-8 mt-4" role="alert">
+            <div class="alert alert-success col-lg-8" role="alert">
                 {{  session('Info') }}
             </div>
             @endif
@@ -69,42 +45,42 @@
                 </div>
                     <div class="d-column mx-5">
                             <h2>{{ $buku->Judul }}</h2>
-                            <p><b>Penulis:</b> {{ $buku->Penulis }}</p>
-                            <p><b>Penerbit:</b> {{ $buku->Penerbit }}</p>
-                            <p><b>Tahun Terbit:</b> {{ $buku->TahunTerbit }}</p>
-                            <p style="text-align: start;"><b>Sinopsis:</b> {{ $buku->Deskripsi }}</p>
+                            <p>{{ $buku->Penulis }}</p>
+                            <p>{{ $buku->Penerbit }}</p>
+                            <p>{{ $buku->TahunTerbit }}</p>
+                            <p style="text-align: start;">{{ $buku->Deskripsi }}</p>
                         </div>
                     </div>
+                    <form action="{{ route('ulasan.store') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="BukuID" value="{{ $buku->BukuID }}">
+                        <h2>Rating :</h2><input type="number" name="Rating" min="1" max="5" rqeuired>
+                        <h2>Ulasan :</h2><br>
+                        <textarea name="Ulasan" required></textarea>
+                        <button type="submit">Berikan Ulasan</button>
+                    </form>
+
+                    <div class="d-column mx-5">
+                    <h2>Ulasan-Ulasan Pembaca</h2>
+                    {{-- @if ($buku->ulasans) --}}
+                        @foreach ($ulasans as $ulasan)
+                            <p>{{ $ulasan->user->Username }}: {{ $ulasan->Ulasan }}</p>
+                            <p>Rating: {{ $ulasan->Rating }}</p>
+                        @endforeach
+                    {{-- @else --}}
+                    {{-- <p>Belum ada komentar untuk buku ini.</p> --}}
+                    {{-- @endif --}}
+                    
                     @foreach ($buku->kategori as $kategoribuku)
                         <div>
-                            <h2>Kategori: {{ $kategoribuku->NamaKategori }}</h2>
+                            <h2>Categories: {{ $kategoribuku->NamaKategori }}</h2>
                                 @endforeach
                             </div>
                             @if (in_array(Auth::user()->role, ['admin', 'petugas']))
                             <a href="{{url('library')}}"><button type="button" class="btn btn-outline-warning">Ubah Kategori</button></a>
                             @endif
-                    <div class="book-rating-container d-column mx-5 mt-5">
-                    <form action="{{ route('ulasan.store') }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="BukuID" value="{{ $buku->BukuID }}">
-                        <h2>Rating :</h2><img src="../storage/image/star.png" width="35" height="35" style="margin-right:10px;"><input type="number" name="Rating" min="1" max="5" placeholder="1-5" required value="{{ $rating }}">
-                        <h2 class="mt-4">Ulasan :</h2>
-                        <textarea name="Ulasan" rows="3" cols="100" required></textarea><br>
-                        <button class="btn btn-outline-warning" type="submit">Berikan Ulasan</button>
-                    </form>
-                    <br>
-                    <div class="d-column mt-5">
-                    <h2>Ulasan-Ulasan Pembaca</h2>
-                    @if ($buku->ulasan)
-                        @foreach ($buku->ulasan as $ulasan)
-                            <p>{{ $ulasan->user->Username }}: {{ $ulasan->Ulasan }}</p>
-                            <p>Rating: {{ $ulasan->Rating }}</p>
-                        @endforeach
-                    @else
-                    <p>Belum ada komentar untuk buku ini.</p>
-                    @endif
-                    </div>
-            </div>
-        </div>
+                </div><br>
+
+
 </body>
 </html>

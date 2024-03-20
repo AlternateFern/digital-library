@@ -13,7 +13,7 @@ class Peminjaman extends Model
         'UserID', 'BukuID', 'TanggalPeminjaman', 'TanggalPengembalian', 'StatusPeminjaman',
     ];
     protected $table = 'peminjaman'; 
-
+    public $timestamps = false;
     protected $primaryKey = 'PeminjamanID';
 
     public function buku()

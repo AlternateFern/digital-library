@@ -14,3 +14,19 @@
 .container {
     position: fixed;top: 30%;left: 50%;transform: translate(-50%, -50%);
 }
+
+.logoutbtn {
+    padding: 5px 12px 5px 12px; /* t r b l */
+    background-color: transparent;
+    border-color: transparent;
+    transition: 0.5s;
+}
+
+.logoutbtn:hover {
+    border-color: red;
+}
+
+div>h2,p {
+    font-family: NanumM;
+    color: rgb(255, 196, 0);
+}

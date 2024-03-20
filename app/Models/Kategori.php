@@ -13,4 +13,5 @@ class Kategori extends Model
 
     protected $table = 'kategoribuku';
     protected $primaryKey = 'KategoriID';
+    public $timestamps = false;
 }

@@ -32,8 +32,6 @@
                     </div>
                 </div>
                 <div class="bar" style="width:90%;"></div>
-                <input type="checkbox" name="rememberme" id="rememberme">
-                <label for="rememberme">Remember Me</label>
                 <button type="submit" name="" class="hoverable-element btn mt-3 btn-block btn-grad active-element">Login</button>
             </div>
         </form>
